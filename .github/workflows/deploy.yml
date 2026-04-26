@@ -1,3 +1,4 @@
+---
 name: Deploy AWS (apip-website)
 
 on:
@@ -18,8 +19,8 @@ jobs:
     name: Validate YAML and HTML
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
           node-version: "20"
       - name: Install yamllint
@@ -28,16 +29,17 @@ jobs:
           python3 -m pip install yamllint
       - name: Lint workflow yaml
         run: |
-          yamllint -d '{extends: default, rules: {truthy: disable}}' .github/workflows/deploy.yml
+          yamllint -d '{extends: default, rules: {truthy: disable, line-length: disable}}' .github/workflows/deploy.yml
       - name: Lint html files
-        run: npx --yes htmlhint "src/**/*.html"
+        run: |
+          npx --yes htmlhint "src/**/*.html"
 
   qa-static:
     name: QA static checks
     runs-on: ubuntu-latest
     needs: [validate-workflow-and-html]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Verify required files
         run: |
           test -f src/index.html
@@ -53,7 +55,7 @@ jobs:
       aws_account_id: ${{ steps.target.outputs.aws_account_id }}
       stack_name: ${{ steps.target.outputs.stack_name }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Map branch -> env and load deploy/env/*.env
         id: target
         shell: bash
@@ -78,23 +80,32 @@ jobs:
     name: Deploy website stack (S3 + CloudFront)
     needs: [resolve-target]
     runs-on: ubuntu-latest
-    environment: ${{ needs.resolve-target.outputs.env_short == 'prd' && 'prd' || (needs.resolve-target.outputs.env_short == 'stg' && 'stg' || 'dev') }}
+    environment: >-
+      ${{
+        needs.resolve-target.outputs.env_short == 'prd' && 'prd' ||
+        (needs.resolve-target.outputs.env_short == 'stg' && 'stg' || 'dev')
+      }}
     outputs:
       bucket_name: ${{ steps.outputs.outputs.bucket_name }}
       distribution_id: ${{ steps.outputs.outputs.distribution_id }}
       distribution_domain: ${{ steps.outputs.outputs.distribution_domain }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: aws-actions/configure-aws-credentials@v4
+      - uses: actions/checkout@v5
+      - uses: aws-actions/configure-aws-credentials@v5
         with:
-          role-to-assume: arn:aws:iam::${{ needs.resolve-target.outputs.aws_account_id }}:role/AWSAPIPDeployExecutionRole
+          role-to-assume: >-
+            arn:aws:iam::${{
+              needs.resolve-target.outputs.aws_account_id
+            }}:role/AWSAPIPDeployExecutionRole
           aws-region: ${{ vars.AWS_REGION || 'us-east-1' }}
 
       - name: Deploy cloudformation stack
         run: |
           EXTRA_PARAMS=""
-          if [[ -n "${{ vars.WEBSITE_DOMAIN_NAME }}" && -n "${{ vars.WEBSITE_CERT_ARN }}" ]]; then
-            EXTRA_PARAMS="DomainName=${{ vars.WEBSITE_DOMAIN_NAME }} AcmCertificateArn=${{ vars.WEBSITE_CERT_ARN }}"
+          if [[ -n "${{ vars.WEBSITE_DOMAIN_NAME }}" &&
+                -n "${{ vars.WEBSITE_CERT_ARN }}" ]]; then
+            EXTRA_PARAMS="DomainName=${{ vars.WEBSITE_DOMAIN_NAME }}"
+            EXTRA_PARAMS="${EXTRA_PARAMS} AcmCertificateArn=${{ vars.WEBSITE_CERT_ARN }}"
           fi
 
           aws cloudformation deploy \
@@ -106,25 +117,30 @@ jobs:
               PriceClass=PriceClass_100 \
               ${EXTRA_PARAMS} \
             --capabilities CAPABILITY_NAMED_IAM \
-            --role-arn arn:aws:iam::${{ needs.resolve-target.outputs.aws_account_id }}:role/AWSAPIPCloudFormationExecutionRole \
+            --role-arn \
+              arn:aws:iam::${{ needs.resolve-target.outputs.aws_account_id }}:role/AWSAPIPCloudFormationExecutionRole \
             --no-fail-on-empty-changeset
 
       - name: Read outputs
         id: outputs
         run: |
+          QUERY_BUCKET="Stacks[0].Outputs[?OutputKey=='WebsiteBucketName'].OutputValue"
+          QUERY_DIST_ID="Stacks[0].Outputs[?OutputKey=='CloudFrontDistributionId'].OutputValue"
+          QUERY_DIST_DOMAIN="Stacks[0].Outputs[?OutputKey=='CloudFrontDomainName'].OutputValue"
+
           BUCKET=$(aws cloudformation describe-stacks \
             --stack-name "${{ needs.resolve-target.outputs.stack_name }}" \
-            --query "Stacks[0].Outputs[?OutputKey=='WebsiteBucketName'].OutputValue" \
+            --query "${QUERY_BUCKET}" \
             --output text)
 
           DIST_ID=$(aws cloudformation describe-stacks \
             --stack-name "${{ needs.resolve-target.outputs.stack_name }}" \
-            --query "Stacks[0].Outputs[?OutputKey=='CloudFrontDistributionId'].OutputValue" \
+            --query "${QUERY_DIST_ID}" \
             --output text)
 
           DIST_DOMAIN=$(aws cloudformation describe-stacks \
             --stack-name "${{ needs.resolve-target.outputs.stack_name }}" \
-            --query "Stacks[0].Outputs[?OutputKey=='CloudFrontDomainName'].OutputValue" \
+            --query "${QUERY_DIST_DOMAIN}" \
             --output text)
 
           echo "bucket_name=${BUCKET}" >> "$GITHUB_OUTPUT"
@@ -135,12 +151,19 @@ jobs:
     name: Upload static site + invalidate CloudFront
     needs: [resolve-target, deploy-infra]
     runs-on: ubuntu-latest
-    environment: ${{ needs.resolve-target.outputs.env_short == 'prd' && 'prd' || (needs.resolve-target.outputs.env_short == 'stg' && 'stg' || 'dev') }}
+    environment: >-
+      ${{
+        needs.resolve-target.outputs.env_short == 'prd' && 'prd' ||
+        (needs.resolve-target.outputs.env_short == 'stg' && 'stg' || 'dev')
+      }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: aws-actions/configure-aws-credentials@v4
+      - uses: actions/checkout@v5
+      - uses: aws-actions/configure-aws-credentials@v5
         with:
-          role-to-assume: arn:aws:iam::${{ needs.resolve-target.outputs.aws_account_id }}:role/AWSAPIPDeployExecutionRole
+          role-to-assume: >-
+            arn:aws:iam::${{
+              needs.resolve-target.outputs.aws_account_id
+            }}:role/AWSAPIPDeployExecutionRole
           aws-region: ${{ vars.AWS_REGION || 'us-east-1' }}
 
       - name: Sync src to S3

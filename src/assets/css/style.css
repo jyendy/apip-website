@@ -1411,6 +1411,10 @@ h6 {
   }
 }
 
+#problemBody {
+  white-space: pre-line;
+}
+
 .sec-title.white .sub-title,
 .sec-title.white .title,
 .sec-title.white p {
@@ -3578,6 +3582,19 @@ h6 {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+}
+
+.footer-btn .footer-cta-subline {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  width: 100%;
+  margin-top: 14px;
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+  color: var(--white-color);
+  opacity: 0.92;
 }
 
 .footer-widget {

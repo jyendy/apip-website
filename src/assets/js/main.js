@@ -390,19 +390,20 @@ document.addEventListener("DOMContentLoaded", function () {
         signinLabel: "Sign in",
         signupLabel: "Sign up",
         heroKicker: "Asset Intelligence Platform",
-        heroTitle: "Make better investment decisions. Faster.",
+        heroTitle:
+          "Make better investment decisions — before losing money.",
         heroSubtitle:
           "Fincora helps you know if an investment is worth it - before committing capital.",
-        heroPrimaryCta: "Start analyzing your assets",
+        heroPrimaryCta: "Start evaluating your investments",
         heroRating: "Understand your returns in minutes",
         heroPunch: "Stop guessing. Start measuring.",
         problemKicker: "Problem",
         problemTitle:
           "Most investment decisions are made with incomplete data.",
         problemBody:
-          "Spreadsheets break when things get complex. Returns look good - until financing changes everything. Portfolio performance is hard to understand.",
+          "Spreadsheets break when things get complex\nReturns look good — until financing changes everything\nPortfolio performance is hard to understand",
         problemCard1Title: "You don't need more data.",
-        problemCard1Body: "You need clarity.",
+        problemCard1Body: "You need to make decisions based on real numbers.",
         problemCard2Title: "Not just data.",
         problemCard2Body: "Financial intelligence.",
         problemCard2Extra: "Clear decisions based on real numbers.",
@@ -412,18 +413,21 @@ document.addEventListener("DOMContentLoaded", function () {
         solutionTitle:
           "Fincora connects your assets, your cash flows, and your decisions in one place.",
         solutionBody:
-          "Model your investments, understand your returns, and see the real impact of financing - all in one place.",
+          "Model your investments and understand how much you can gain — and what you could lose.",
         feature1Title: "Structured financial analysis",
         feature1Body:
           "Evaluate each asset with clear, consistent metrics.",
         feature2Title: "Scenarios and simulation",
         feature2Body:
           "Understand how returns change under different assumptions.",
+        feature3Title: "Enterprise-grade security",
+        feature3Body:
+          "Your financial data stays protected and under your control.",
         benefitsKicker: "Benefits of Fincora",
         benefitsTitle:
           "Outcomes that help you decide with confidence",
         benefit1Title:
-          "Evaluate investments before making costly mistakes",
+          "Avoid investment mistakes that can cost you thousands",
         benefit1Body:
           "Analyze key scenarios before committing capital.",
         benefit2Title:
@@ -462,7 +466,7 @@ document.addEventListener("DOMContentLoaded", function () {
         starterFeature4M: "Asset-level insights",
         starterFeature5M: "Export results (PDF)",
         starterFeature6M: "Email support",
-        starterCtaM: "Start free for 7 days",
+        starterCtaM: "Start free",
         proTitleM: "Pro",
         proBadgeM: "Most popular",
         proSubtitleM: "Make decisions with full portfolio visibility",
@@ -476,7 +480,7 @@ document.addEventListener("DOMContentLoaded", function () {
         proFeature5M: "Scenario analysis (best and worst case)",
         proFeature6M: "Investment comparison tools",
         proFeature7M: "Priority support",
-        proCtaM: "Start free for 14 days",
+        proCtaM: "Start free",
         businessTitleM: "Business",
         businessSubtitleM:
           "Operate investment decisions at a team level",
@@ -489,51 +493,54 @@ document.addEventListener("DOMContentLoaded", function () {
         businessFeature5M: "Custom financial assumptions",
         businessFeature6M: "Document management (basic)",
         businessFeature7M: "Dedicated support",
-        businessCtaM: "Start free for 14 days",
+        businessCtaM: "Start free",
         starterTitleY: "Starter",
         starterSubtitleY:
           "Analyze and validate your first investments with clarity",
         starterMonthlyEqY: "$19 / month equivalent (2 months free)",
         starterDescY:
           "Everything you need to analyze your first investments",
-        starterCtaY: "Start free for 7 days",
+        starterCtaY: "Start free",
         proTitleY: "Pro",
         proBadgeY: "Most popular",
         proSubtitleY: "Make decisions with full portfolio visibility",
         proMonthlyEqY: "$59 / month equivalent (2 months free)",
         proDescY: "Advanced analysis and full portfolio visibility",
-        proCtaY: "Start free for 14 days",
+        proCtaY: "Start free",
         businessTitleY: "Business",
         businessSubtitleY:
           "Operate investment decisions at a team level",
         businessMonthlyEqY: "$129 / month equivalent (2 months free)",
         businessDescY: "Full financial intelligence for teams and portfolios",
-        businessCtaY: "Start free for 14 days",
+        businessCtaY: "Start free",
         pricingFinalTitle: "Before you invest, run it through Fincora.",
         pricingFinalBody:
-          "It takes minutes - and can prevent a bad investment.",
+          "It takes minutes — and can prevent a bad decision with real money.",
         pricingFinalCta: "Start analyzing now",
         faqTitle: "Everything you need to know before getting started",
         faqSubtitle:
           "Clear answers to make better decisions before investing.",
         faqQ1: "1. What problem does Fincora actually solve?",
         faqA1:
-          "Fincora helps you evaluate whether an investment is worth it before committing capital. It models revenue, costs, and financing so you understand real returns and make data-driven decisions.",
+          "Fincora helps you know if an investment is worth it before committing capital. It models revenue, costs, and financing so you understand real returns and make data-driven decisions.",
         faqQ2: "2. How difficult is it to use Fincora?",
         faqA2:
-          "No technical skills are required. You can model an asset in minutes and get ROI, IRR, and cash flow insights without complexity.",
+          "No technical skills are required. You can model an asset in minutes and get clear metrics like ROI, IRR, and cash flow.",
         faqQ3: "3. How reliable are the results?",
         faqA3:
-          "Metrics are calculated using standard financial models used in real investments. Fincora does not guess outcomes; it builds them from clear cash flows and assumptions.",
+          "Metrics are calculated using standard financial models used in real investments. Fincora doesn't estimate outcomes — it builds them from clear cash flows and assumptions.",
         faqQ4: "4. Can I use Fincora before having real data?",
         faqA4:
           "Yes. You can start with estimated scenarios and later replace them with real data as your asset operates.",
-        faqQ5: "5. What if Fincora does not provide value?",
+        faqQ5: "5. What if Fincora doesn't provide value?",
         faqA5:
-          "You can try the platform risk-free and validate whether it improves your decisions before scaling usage.",
+          "You can try the platform risk-free and validate if it actually improves your decisions before scaling usage.",
         faqQ6: "6. How do I know if an investment is good or bad?",
         faqA6:
-          "Fincora shows expected returns (ROI, IRR), financing impact, and payback period so you can compare scenarios and make informed decisions.",
+          "Fincora shows ROI, IRR, cash flow, and payback, so you can compare scenarios and make decisions with data, not intuition.",
+        footerCta: "Start free",
+        footerCtaSubline:
+          "No complex setup required. Get started in minutes.",
         footerTagline: "Analyze. Evaluate. Decide.",
       },
       es: {
@@ -545,19 +552,20 @@ document.addEventListener("DOMContentLoaded", function () {
         signinLabel: "Iniciar sesión",
         signupLabel: "Crear cuenta",
         heroKicker: "Plataforma de Inteligencia de Activos",
-        heroTitle: "Toma mejores decisiones de inversión. Más rápido.",
+        heroTitle:
+          "Toma mejores decisiones de inversión — antes de perder dinero.",
         heroSubtitle:
           "Fincora te ayuda a saber si una inversión vale la pena - antes de comprometer capital.",
-        heroPrimaryCta: "Empieza a analizar tus activos",
+        heroPrimaryCta: "Empieza a evaluar tus inversiones",
         heroRating: "Entiende tus retornos en minutos",
         heroPunch: "Deja de adivinar. Empieza a medir.",
         problemKicker: "Problema",
         problemTitle:
           "La mayoría de las decisiones de inversión se toman con información incompleta.",
         problemBody:
-          "Las hojas de cálculo fallan cuando todo se vuelve complejo. Los retornos se ven bien - hasta que el financiamiento cambia todo. El desempeño del portafolio es difícil de entender.",
+          "Las hojas de cálculo fallan cuando todo se vuelve complejo\nLos retornos se ven bien — hasta que el financiamiento cambia todo\nEl desempeño del portafolio es difícil de entender",
         problemCard1Title: "No necesitas más datos.",
-        problemCard1Body: "Necesitas claridad.",
+        problemCard1Body: "Necesitas tomar decisiones con números reales.",
         problemCard2Title: "No solo datos.",
         problemCard2Body: "Inteligencia financiera.",
         problemCard2Extra:
@@ -568,18 +576,21 @@ document.addEventListener("DOMContentLoaded", function () {
         solutionTitle:
           "Fincora conecta tus activos, tus flujos y tus decisiones en un solo lugar.",
         solutionBody:
-          "Modela tus inversiones, entiende tus retornos y ve el impacto real del financiamiento, todo en un solo lugar.",
+          "Modela tus inversiones y entiende cuánto puedes ganar — y qué puedes perder.",
         feature1Title: "Análisis financiero estructurado",
         feature1Body:
           "Evalúa cada activo con métricas claras y consistentes.",
         feature2Title: "Escenarios y simulación",
         feature2Body:
           "Entiende cómo cambian los retornos bajo diferentes supuestos.",
+        feature3Title: "Seguridad de nivel empresarial",
+        feature3Body:
+          "Tus datos financieros se mantienen protegidos y bajo tu control.",
         benefitsKicker: "Beneficios de Fincora",
         benefitsTitle:
           "Resultados que te ayudan a decidir con confianza",
         benefit1Title:
-          "Evalúa inversiones antes de cometer errores costosos",
+          "Evita errores de inversión que pueden costarte miles",
         benefit1Body:
           "Analiza escenarios clave antes de comprometer capital.",
         benefit2Title:
@@ -618,7 +629,7 @@ document.addEventListener("DOMContentLoaded", function () {
         starterFeature4M: "Insights por activo",
         starterFeature5M: "Exportación de resultados (PDF)",
         starterFeature6M: "Soporte por correo",
-        starterCtaM: "Empieza gratis por 7 días",
+        starterCtaM: "Empieza gratis",
         proTitleM: "Pro",
         proBadgeM: "Más popular",
         proSubtitleM:
@@ -632,7 +643,7 @@ document.addEventListener("DOMContentLoaded", function () {
         proFeature5M: "Análisis de escenarios (mejor y peor caso)",
         proFeature6M: "Herramientas de comparación de inversiones",
         proFeature7M: "Soporte prioritario",
-        proCtaM: "Empieza gratis por 14 días",
+        proCtaM: "Empieza gratis",
         businessTitleM: "Business",
         businessSubtitleM:
           "Opera decisiones de inversión a nivel equipo",
@@ -646,53 +657,56 @@ document.addEventListener("DOMContentLoaded", function () {
         businessFeature5M: "Supuestos financieros personalizados",
         businessFeature6M: "Gestión documental (básica)",
         businessFeature7M: "Soporte dedicado",
-        businessCtaM: "Empieza gratis por 14 días",
+        businessCtaM: "Empieza gratis",
         starterTitleY: "Starter",
         starterSubtitleY:
           "Analiza y valida tus primeras inversiones con claridad",
         starterMonthlyEqY: "$19 / mes equivalente (2 meses gratis)",
         starterDescY:
           "Todo lo que necesitas para analizar tus primeras inversiones",
-        starterCtaY: "Empieza gratis por 7 días",
+        starterCtaY: "Empieza gratis",
         proTitleY: "Pro",
         proBadgeY: "Más popular",
         proSubtitleY:
           "Toma decisiones con visibilidad completa de tu portafolio",
         proMonthlyEqY: "$59 / mes equivalente (2 meses gratis)",
         proDescY: "Análisis avanzado y visibilidad total del portafolio",
-        proCtaY: "Empieza gratis por 14 días",
+        proCtaY: "Empieza gratis",
         businessTitleY: "Business",
         businessSubtitleY:
           "Opera decisiones de inversión a nivel equipo",
         businessMonthlyEqY: "$129 / mes equivalente (2 meses gratis)",
         businessDescY:
           "Inteligencia financiera completa para equipos y portafolios",
-        businessCtaY: "Empieza gratis por 14 días",
+        businessCtaY: "Empieza gratis",
         pricingFinalTitle: "Antes de invertir, pásalo por Fincora.",
         pricingFinalBody:
-          "Te toma minutos y puede evitar una mala inversión.",
+          "Te toma minutos — y puede evitar una mala decisión con dinero real.",
         pricingFinalCta: "Empieza a analizar ahora",
         faqTitle: "Todo lo que necesitas saber antes de empezar",
         faqSubtitle:
           "Respuestas claras para decidir mejor antes de invertir.",
         faqQ1: "1. ¿Qué problema resuelve Fincora realmente?",
         faqA1:
-          "Fincora te ayuda a evaluar si una inversión vale la pena antes de comprometer capital. Modela ingresos, costos y financiamiento para que entiendas el retorno real y tomes decisiones con datos.",
+          "Fincora te ayuda a saber si una inversión vale la pena antes de comprometer capital. Modela ingresos, costos y financiamiento para que entiendas el retorno real y tomes decisiones con datos.",
         faqQ2: "2. ¿Qué tan difícil es usar Fincora?",
         faqA2:
-          "No necesitas conocimientos técnicos. Puedes modelar un activo en minutos y obtener métricas como ROI, IRR y flujo de efectivo sin complejidad.",
+          "No necesitas conocimientos técnicos. Puedes modelar un activo en minutos y obtener métricas claras como ROI, IRR y flujo de efectivo.",
         faqQ3: "3. ¿Qué tan confiables son los resultados?",
         faqA3:
-          "Las métricas se calculan con modelos financieros estándar utilizados en inversión real. Fincora no estima resultados: los construye a partir de flujos y supuestos claros.",
+          "Las métricas se calculan con modelos financieros estándar usados en inversión real. Fincora no estima resultados — los construye a partir de flujos y supuestos claros.",
         faqQ4: "4. ¿Puedo usar Fincora antes de tener datos reales?",
         faqA4:
-          "Sí. Puedes comenzar con escenarios estimados y luego reemplazarlos con datos reales conforme operas el activo.",
+          "Sí. Puedes empezar con escenarios estimados y luego reemplazarlos con datos reales conforme operas el activo.",
         faqQ5: "5. ¿Qué pasa si Fincora no me aporta valor?",
         faqA5:
-          "Puedes probar la plataforma sin compromiso y validar si mejora tus decisiones antes de escalar su uso.",
+          "Puedes probar la plataforma sin compromiso y validar si realmente mejora tus decisiones antes de escalar su uso.",
         faqQ6: "6. ¿Cómo sé si una inversión es buena o mala?",
         faqA6:
-          "Fincora te muestra el retorno esperado (ROI, IRR), el impacto del financiamiento y el tiempo de recuperación, para que puedas comparar escenarios y tomar una decisión informada.",
+          "Fincora te muestra ROI, IRR, flujo de efectivo y tiempo de recuperación, para que compares escenarios y tomes una decisión con datos, no con intuición.",
+        footerCta: "Empieza gratis",
+        footerCtaSubline:
+          "No necesitas configuración compleja. Empieza en minutos.",
         footerTagline: "Analiza. Evalúa. Decide.",
       },
     },

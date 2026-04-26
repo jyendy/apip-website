@@ -27,7 +27,8 @@ jobs:
           python3 -m pip install --upgrade pip
           python3 -m pip install yamllint
       - name: Lint workflow yaml
-        run: yamllint -d "{extends: default, rules: {truthy: disable}}" .github/workflows/deploy.yml
+        run: |
+          yamllint -d '{extends: default, rules: {truthy: disable}}' .github/workflows/deploy.yml
       - name: Lint html files
         run: npx --yes htmlhint "src/**/*.html"
 

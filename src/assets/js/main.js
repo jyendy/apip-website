@@ -454,10 +454,25 @@ document.addEventListener("DOMContentLoaded", function () {
         billingMonthly: "Monthly",
         billingYearly: "Yearly - ",
         billingYearlyPromo: "Pay 10 months, get 12",
+        pricingMxnNote:
+          "MXN prices may vary slightly based on exchange rates.",
+        starterPriceAmountM: "$19 USD / $349 MXN",
+        starterPricePeriodM: "/month",
+        proPriceAmountM: "$59 USD / $999 MXN",
+        proPricePeriodM: "/month",
+        businessPriceAmountM: "$129 USD / $2,199 MXN",
+        businessPricePeriodM: "/month",
+        starterPriceAmountY: "$190 USD / $3,490 MXN",
+        starterPricePeriodY: "/year",
+        proPriceAmountY: "$590 USD / $9,990 MXN",
+        proPricePeriodY: "/year",
+        businessPriceAmountY: "$1,290 USD / $21,990 MXN",
+        businessPricePeriodY: "/year",
         starterTitleM: "Starter",
         starterSubtitleM:
           "Analyze and validate your first investments with clarity",
-        starterAnnualM: "$190 / year (2 months free)",
+        starterAnnualM:
+          "$190 USD / $3,490 MXN / year (2 months free)",
         starterDescM:
           "Everything you need to analyze your first investments",
         starterFeature1M: "Up to 5 assets",
@@ -470,7 +485,7 @@ document.addEventListener("DOMContentLoaded", function () {
         proTitleM: "Pro",
         proBadgeM: "Most popular",
         proSubtitleM: "Make decisions with full portfolio visibility",
-        proAnnualM: "$590 / year (2 months free)",
+        proAnnualM: "$590 USD / $9,990 MXN / year (2 months free)",
         proDescM: "Advanced analysis and full portfolio visibility",
         proFeature1M: "Unlimited assets",
         proFeature2M:
@@ -484,7 +499,7 @@ document.addEventListener("DOMContentLoaded", function () {
         businessTitleM: "Business",
         businessSubtitleM:
           "Operate investment decisions at a team level",
-        businessAnnualM: "$1,290 / year (2 months free)",
+        businessAnnualM: "$1,290 USD / $21,990 MXN / year (2 months free)",
         businessDescM: "Full financial intelligence for teams and portfolios",
         businessFeature1M: "Everything in Pro",
         businessFeature2M: "Multi-user access (roles and permissions)",
@@ -497,20 +512,23 @@ document.addEventListener("DOMContentLoaded", function () {
         starterTitleY: "Starter",
         starterSubtitleY:
           "Analyze and validate your first investments with clarity",
-        starterMonthlyEqY: "$19 / month equivalent (2 months free)",
+        starterMonthlyEqY:
+          "$19 USD / $349 MXN per month equivalent (2 months free)",
         starterDescY:
           "Everything you need to analyze your first investments",
         starterCtaY: "Start free",
         proTitleY: "Pro",
         proBadgeY: "Most popular",
         proSubtitleY: "Make decisions with full portfolio visibility",
-        proMonthlyEqY: "$59 / month equivalent (2 months free)",
+        proMonthlyEqY:
+          "$59 USD / $999 MXN per month equivalent (2 months free)",
         proDescY: "Advanced analysis and full portfolio visibility",
         proCtaY: "Start free",
         businessTitleY: "Business",
         businessSubtitleY:
           "Operate investment decisions at a team level",
-        businessMonthlyEqY: "$129 / month equivalent (2 months free)",
+        businessMonthlyEqY:
+          "$129 USD / $2,199 MXN per month equivalent (2 months free)",
         businessDescY: "Full financial intelligence for teams and portfolios",
         businessCtaY: "Start free",
         pricingFinalTitle: "Before you invest, run it through Fincora.",
@@ -538,6 +556,23 @@ document.addEventListener("DOMContentLoaded", function () {
         faqQ6: "6. How do I know if an investment is good or bad?",
         faqA6:
           "Fincora shows ROI, IRR, cash flow, and payback, so you can compare scenarios and make decisions with data, not intuition.",
+        footerHeadline:
+          "Every investment decision, backed by data.",
+        footerSubhead:
+          "From your first asset to your full portfolio, Fincora helps you decide with confidence.",
+        footerVideoLabel: "See how it works",
+        footerProductTitle: "Product",
+        footerCompanyTitle: "Company",
+        footerLinkIntegrations: "Integrations",
+        footerLinkDownloads: "Downloads",
+        footerLinkPricing: "Pricing",
+        footerLinkAbout: "About us",
+        footerLinkBlog: "Latest blog",
+        footerLinkCustomers: "Our customers",
+        footerLinkCareers: "Careers",
+        footerCopyright: "Fincora, 2026 © All rights reserved",
+        footerTermsLink: "Terms and conditions",
+        footerPrivacyLink: "Privacy policy",
         footerCta: "Start free",
         footerCtaSubline:
           "No complex setup required. Get started in minutes.",
@@ -617,10 +652,25 @@ document.addEventListener("DOMContentLoaded", function () {
         billingMonthly: "Mensual",
         billingYearly: "Anual - ",
         billingYearlyPromo: "Paga 10 meses y recibe 12",
+        pricingMxnNote:
+          "Precios en MXN pueden variar ligeramente según tipo de cambio",
+        starterPriceAmountM: "$19 USD / $349 MXN",
+        starterPricePeriodM: "/mes",
+        proPriceAmountM: "$59 USD / $999 MXN",
+        proPricePeriodM: "/mes",
+        businessPriceAmountM: "$129 USD / $2,199 MXN",
+        businessPricePeriodM: "/mes",
+        starterPriceAmountY: "$190 USD / $3,490 MXN",
+        starterPricePeriodY: "/año",
+        proPriceAmountY: "$590 USD / $9,990 MXN",
+        proPricePeriodY: "/año",
+        businessPriceAmountY: "$1,290 USD / $21,990 MXN",
+        businessPricePeriodY: "/año",
         starterTitleM: "Starter",
         starterSubtitleM:
           "Analiza y valida tus primeras inversiones con claridad",
-        starterAnnualM: "$190 / año (2 meses gratis)",
+        starterAnnualM:
+          "$190 USD / $3,490 MXN / año (2 meses gratis)",
         starterDescM:
           "Todo lo que necesitas para analizar tus primeras inversiones",
         starterFeature1M: "Hasta 5 activos",
@@ -634,7 +684,7 @@ document.addEventListener("DOMContentLoaded", function () {
         proBadgeM: "Más popular",
         proSubtitleM:
           "Toma decisiones con visibilidad completa de tu portafolio",
-        proAnnualM: "$590 / año (2 meses gratis)",
+        proAnnualM: "$590 USD / $9,990 MXN / año (2 meses gratis)",
         proDescM: "Análisis avanzado y visibilidad total del portafolio",
         proFeature1M: "Activos ilimitados",
         proFeature2M: "Agregación a nivel proyecto y portafolio",
@@ -647,7 +697,7 @@ document.addEventListener("DOMContentLoaded", function () {
         businessTitleM: "Business",
         businessSubtitleM:
           "Opera decisiones de inversión a nivel equipo",
-        businessAnnualM: "$1,290 / año (2 meses gratis)",
+        businessAnnualM: "$1,290 USD / $21,990 MXN / año (2 meses gratis)",
         businessDescM:
           "Inteligencia financiera completa para equipos y portafolios",
         businessFeature1M: "Todo lo de Pro",
@@ -661,7 +711,8 @@ document.addEventListener("DOMContentLoaded", function () {
         starterTitleY: "Starter",
         starterSubtitleY:
           "Analiza y valida tus primeras inversiones con claridad",
-        starterMonthlyEqY: "$19 / mes equivalente (2 meses gratis)",
+        starterMonthlyEqY:
+          "$19 USD / $349 MXN equivalentes al mes (2 meses gratis)",
         starterDescY:
           "Todo lo que necesitas para analizar tus primeras inversiones",
         starterCtaY: "Empieza gratis",
@@ -669,13 +720,15 @@ document.addEventListener("DOMContentLoaded", function () {
         proBadgeY: "Más popular",
         proSubtitleY:
           "Toma decisiones con visibilidad completa de tu portafolio",
-        proMonthlyEqY: "$59 / mes equivalente (2 meses gratis)",
+        proMonthlyEqY:
+          "$59 USD / $999 MXN equivalentes al mes (2 meses gratis)",
         proDescY: "Análisis avanzado y visibilidad total del portafolio",
         proCtaY: "Empieza gratis",
         businessTitleY: "Business",
         businessSubtitleY:
           "Opera decisiones de inversión a nivel equipo",
-        businessMonthlyEqY: "$129 / mes equivalente (2 meses gratis)",
+        businessMonthlyEqY:
+          "$129 USD / $2,199 MXN equivalentes al mes (2 meses gratis)",
         businessDescY:
           "Inteligencia financiera completa para equipos y portafolios",
         businessCtaY: "Empieza gratis",
@@ -704,6 +757,23 @@ document.addEventListener("DOMContentLoaded", function () {
         faqQ6: "6. ¿Cómo sé si una inversión es buena o mala?",
         faqA6:
           "Fincora te muestra ROI, IRR, flujo de efectivo y tiempo de recuperación, para que compares escenarios y tomes una decisión con datos, no con intuición.",
+        footerHeadline:
+          "Cada decisión de inversión, respaldada por datos.",
+        footerSubhead:
+          "Desde tu primer activo hasta todo tu portafolio, Fincora te ayuda a decidir con confianza.",
+        footerVideoLabel: "Ver cómo funciona",
+        footerProductTitle: "Producto",
+        footerCompanyTitle: "Compañía",
+        footerLinkIntegrations: "Integraciones",
+        footerLinkDownloads: "Descargas",
+        footerLinkPricing: "Precios",
+        footerLinkAbout: "Sobre nosotros",
+        footerLinkBlog: "Último blog",
+        footerLinkCustomers: "Nuestros clientes",
+        footerLinkCareers: "Carreras",
+        footerCopyright: "Fincora, 2026 © Todos los derechos reservados",
+        footerTermsLink: "Términos y condiciones",
+        footerPrivacyLink: "Política de privacidad",
         footerCta: "Empieza gratis",
         footerCtaSubline:
           "No necesitas configuración compleja. Empieza en minutos.",
@@ -722,6 +792,11 @@ document.addEventListener("DOMContentLoaded", function () {
           } else {
             el.textContent = table[id];
           }
+          return;
+        }
+        if (id === "footerTermsLink" || id === "footerPrivacyLink") {
+          el.textContent = table[id];
+          el.setAttribute("title", table[id]);
           return;
         }
         el.textContent = table[id];

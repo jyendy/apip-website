@@ -1972,11 +1972,27 @@ h6 {
           justify-content: flex-end;
   /* Extra small devices */
 }
-@media (max-width: 576px) {
+@media (max-width: 767px) {
+  .header-bottom .row {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  .header-main .row > [class*="col-"] {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
   .header-btn {
-    position: absolute;
-    top: 36px;
-    right: 0;
+    position: static;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    row-gap: 8px;
   }
 }
 .header-btn .btn-style1.v3 {
@@ -1986,11 +2002,6 @@ h6 {
   height: 42px;
   line-height: 42px;
   /* Medium devices */
-}
-@media (max-width: 992px) {
-  .header-btn .btn-style1.v3 {
-    display: none;
-  }
 }
 .header-btn .btn-style1.v3 span {
   background-color: var(--white-color);
@@ -3013,6 +3024,59 @@ h6 {
   display: inline-block;
   letter-spacing: 0;
 }
+
+.pricing-card .price.price-dual {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 4px;
+}
+
+.pricing-card .price-dual-amount {
+  position: relative;
+  top: 0;
+  font-size: 48px;
+  line-height: 1.12;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  display: block;
+}
+
+.pricing-card .price-dual-period {
+  position: relative;
+  top: 0;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 600;
+  letter-spacing: 0;
+  display: block;
+  opacity: 0.92;
+}
+
+@media (max-width: 576px) {
+  .pricing-card .price-dual-amount {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+}
+
+.pricing-mxn-note {
+  max-width: 640px;
+  margin: 14px auto 0;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 400;
+  color: var(--text-color);
+  opacity: 0.85;
+}
 .pricing-card .title {
   font-size: 22px;
   line-height: 32px;
@@ -3595,6 +3659,10 @@ h6 {
   font-weight: 400;
   color: var(--white-color);
   opacity: 0.92;
+}
+
+#footerCta {
+  white-space: nowrap;
 }
 
 .footer-widget {
@@ -5028,6 +5096,9 @@ h6 {
 .chat-bot.active .price-title .nav-tabs .nav-link {
   color: var(--white-color);
 }
+.chat-bot.active .pricing-mxn-note {
+  color: rgba(255, 255, 255, 0.78);
+}
 .chat-bot.active .faq-box2 .vs-accordion {
   border-color: rgba(255, 255, 255, 0.1019607843);
 }
@@ -5212,7 +5283,8 @@ h6 {
 #starterCtaY,
 #proCtaY,
 #businessCtaY,
-#pricingFinalCta {
+#pricingFinalCta,
+#footerCta {
   display: inline;
   width: auto;
   height: auto;

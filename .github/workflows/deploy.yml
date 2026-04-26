@@ -178,4 +178,9 @@ jobs:
 
       - name: Print website URL
         run: |
-          echo "Website URL: https://${{ needs.deploy-infra.outputs.distribution_domain }}"
+          if [[ -n "${{ vars.WEBSITE_DOMAIN_NAME }}" ]]; then
+            echo "Website URL: https://${{ vars.WEBSITE_DOMAIN_NAME }}"
+            echo "CloudFront: https://${{ needs.deploy-infra.outputs.distribution_domain }}"
+          else
+            echo "Website URL: https://${{ needs.deploy-infra.outputs.distribution_domain }}"
+          fi

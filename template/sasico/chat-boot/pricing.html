@@ -1,0 +1,625 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Sasico || Help - Chatbot - SaaS & Tech Startup HTML Template</title>
+    <meta name="author" content="Vecuro">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--==============================
+	   Google Web Fonts
+	============================== -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+
+    <!-- Favicons - Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+
+    <!--==============================
+	    All CSS File
+	============================== -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <!-- swiper slider -->
+    <link rel="stylesheet" href="assets/css/vendor/swiper-bundle.min.css">
+    <!-- AOS css file -->
+    <link rel="stylesheet" href="assets/css/vendor/aos.css">
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body class="chat-bot">
+
+    <!-- darkModeBtn -->
+    <a href="#" id="darkModeBtn" class="dark-active">
+        <img src="assets/images/icon/moon.png" alt="Moon Icon" class="moon">
+        <img src="assets/images/icon/sun.png" alt="Sun Icon" class="sun">
+    </a>
+
+    <div class="video-modal" id="videoModal">
+        <span class="close-video">✕</span>
+        <iframe id="videoFrame"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+
+    <!--********************************
+   		Code Start From Here
+	******************************** -->
+
+    <!--==============================
+        Preloader
+    ==============================-->
+    <div id="preloader">
+        <div class="loader">
+            <img src="assets/images/logo.svg" alt="Website Logo">
+        </div>
+    </div>
+
+    <div class="wrapper">
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <!-- Close Button -->
+            <div class="close-btn">
+                <img src="assets/images/icon/xmark2.svg" alt="Close Menu">
+            </div>
+            <nav>
+                <ul class="main-menu11 menu-style11">
+                    <li><a href="feature.html">Features</a></li>
+                    <li><a href="integration.html">Integrations</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="help.html">Help</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="menu-overlay"></div>
+
+        <!-- main-sec2 -->
+        <section class="main-sec3">
+            <!-- Header -->
+            <header class="header-main v2">
+                <div class="header-bottom">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <!-- Logo -->
+                            <div class="col-lg-2 col-md-6 col-sm-6">
+                                <div class="header-logo">
+                                    <a href="index.html" class="logo" title="Home">
+                                        <img src="assets/images/logo.svg" alt="Sasico SaaS Analytics Logo">
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Navigation Menu -->
+                            <div class="col-lg-9">
+                                <nav class="main-menu11 menu-style11" aria-label="Main Navigation">
+                                    <ul>
+                                        <li><a href="feature.html">Features</a></li>
+                                        <li><a href="integration.html">Integrations</a></li>
+                                        <li><a href="pricing.html">Pricing</a></li>
+                                        <li><a href="help.html">Help</a></li>
+                                        <li><a href="contact.html">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="col-lg-2 col-md-6 col-sm-6">
+                                <div class="header-btn">
+                                    <a href="#" class="btn-style1 v3">
+                                        Sign Up
+                                        <span>
+                                            <img src="assets/images/icon/arrow.svg" alt="Arrow Icon">
+                                        </span>
+                                    </a>
+                                    <button class="hamburger-btn" aria-label="Toggle Menu">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <!-- End header -->
+
+            <!-- page-banner -->
+            <div class="page-banner2">
+                <div class="carousel-container">
+                    <div class="page-content v2">
+                        <h1 class="title" data-aos="fade" data-aos-duration="900" data-aos-delay="300">We Offer flexible pricing for every stage</h1>
+                        <p data-aos="fade" data-aos-duration="900" data-aos-delay="400">Whether you're just getting started or scaling fast, we’ve got a pricing plan that
+                            fits your needs. Our transparent and flexible packages are designed
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- End page-banner -->
+
+            <!-- pricing-sec -->
+            <div class="pricing-sec">
+                <h2 class="hide">pricing-title</h2>
+                <div class="carousel-container">
+                    <div class="price-title">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist" data-aos="fade-up" data-aos-duration="900" data-aos-delay="400">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Monthly</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Yearly - <span>Save 23%</span></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="row">
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="pricing-card" data-aos="fade" data-aos-duration="900" data-aos-delay="300">
+                                        <span class="sub-title">Starter Package</span>
+                                        <p>Perfect for individuals or small businesses</p>
+                                        <h3 class="price">$18<span>/per month cost</span></h3>
+                                        <h4 class="title">Includes:</h4>
+                                        <p class="mb-0">Getting started for grow business</p>
+                                        <ul class="price-list">
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">1 chatbot platforms</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">100 conversations/month</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Basic NLP support</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Limited customization</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Email support</li>
+                                        </ul>
+                                        <a href="#" class="btn-style1">
+                                            Start 7th Days Free Trial
+                                            <span>
+                                                <img src="assets/images/icon/arrow.svg" alt="Arrow icon for free trial button">
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="pricing-card v2" data-aos="fade" data-aos-duration="900" data-aos-delay="400">
+                                        <span class="sub-title">Pro Package</span>
+                                        <p>Great for growing teams power flexibility.</p>
+                                        <h3 class="price">$53<span>/per month cost</span></h3>
+                                        <h4 class="title">Includes:</h4>
+                                        <p class="mb-0">Getting started for grow business</p>
+                                        <ul class="price-list">
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">5 chatbot platforms</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">5000 conversations/month</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Advanced NLP support</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Multilingual support</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">CRM & app integrations</li>
+                                        </ul>
+                                        <a href="#" class="btn-style1 v2">
+                                            Start 14th Days Free Trial
+                                            <span>
+                                                <img src="assets/images/icon/arrow.svg" alt="Arrow icon for free trial button">
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="pricing-card" data-aos="fade" data-aos-duration="900" data-aos-delay="500">
+                                        <span class="sub-title">Business Package</span>
+                                        <p>For high-performance chat automation</p>
+                                        <h3 class="price">$79<span>/per month cost</span></h3>
+                                        <h4 class="title">Includes:</h4>
+                                        <p class="mb-0">Getting started for grow business</p>
+                                        <ul class="price-list">
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Unlimited chatbots</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">25,000 conversations/month</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">AI training & learning module</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Advanced analytics</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Team collaboration features</li>
+                                        </ul>
+                                        <a href="#" class="btn-style1">
+                                            Start 14th Days Free Trial
+                                            <span>
+                                                <img src="assets/images/icon/arrow.svg" alt="Arrow icon for free trial button">
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="pricing-card" data-aos="fade" data-aos-duration="900" data-aos-delay="300">
+                                        <span class="sub-title">Starter Package</span>
+                                        <p>Perfect for individuals or small businesses</p>
+                                        <h3 class="price">$18<span>/per month cost</span></h3>
+                                        <h4 class="title">Includes:</h4>
+                                        <p class="mb-0">Getting started for grow business</p>
+                                        <ul class="price-list">
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">1 chatbot platforms</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">100 conversations/month</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Basic NLP support</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Limited customization</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Email support</li>
+                                        </ul>
+                                        <a href="#" class="btn-style1">
+                                            Start 7th Days Free Trial
+                                            <span>
+                                                <img src="assets/images/icon/arrow.svg" alt="Arrow icon for free trial button">
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="pricing-card v2" data-aos="fade" data-aos-duration="900" data-aos-delay="400">
+                                        <span class="sub-title">Pro Package</span>
+                                        <p>Great for growing teams power flexibility.</p>
+                                        <h3 class="price">$53<span>/per month cost</span></h3>
+                                        <h4 class="title">Includes:</h4>
+                                        <p class="mb-0">Getting started for grow business</p>
+                                        <ul class="price-list">
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">5 chatbot platforms</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">5000 conversations/month</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Advanced NLP support</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Multilingual support</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">CRM & app integrations</li>
+                                        </ul>
+                                        <a href="#" class="btn-style1 v2">
+                                            Start 14th Days Free Trial
+                                            <span>
+                                                <img src="assets/images/icon/arrow.svg" alt="Arrow icon for free trial button">
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-6">
+                                    <div class="pricing-card" data-aos="fade" data-aos-duration="900" data-aos-delay="500">
+                                        <span class="sub-title">Business Package</span>
+                                        <p>For high-performance chat automation</p>
+                                        <h3 class="price">$79<span>/per month cost</span></h3>
+                                        <h4 class="title">Includes:</h4>
+                                        <p class="mb-0">Getting started for grow business</p>
+                                        <ul class="price-list">
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Unlimited chatbots</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">25,000 conversations/month</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">AI training & learning module</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Advanced analytics</li>
+                                            <li><img src="assets/images/icon/check1-2.svg" alt="Check icon for pricing feature">Team collaboration features</li>
+                                        </ul>
+                                        <a href="#" class="btn-style1">
+                                            Start 14th Days Free Trial
+                                            <span>
+                                                <img src="assets/images/icon/arrow.svg" alt="Arrow icon for free trial button">
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End pricing-sec -->
+        </section>
+        <!-- End main-sec2 -->
+
+        <!-- feature-sec -->
+        <section class="feature-sec space">
+            <div class="carousel-container">
+                <div class="sec-title">
+                    <span class="sub-title" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">Elevate Every Interaction</span>
+                    <h2 class="title" data-aos="fade-up" data-aos-duration="900" data-aos-delay="400">Built-In brilliance discover the
+                        smart side of chat
+                    </h2>
+                    <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">Our AI chatbot is packed with intelligent features designed to make
+                        every interaction seamless, natural, and efficient
+                    </p>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card" data-aos="fade-right" data-aos-duration="900" data-aos-delay="200">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="54" height="40" viewBox="0 0 54 40" fill="none"><path d="M22.3492 18.9883H18.6133C18.6519 20.1201 18.7634 21.2483 18.9471 22.366L22.3492 18.9883Z" fill="#004FFC"></path><path d="M17.9242 10.1894C15.8025 9.84788 13.7018 9.38754 11.6324 8.81055C10.0819 11.3488 9.19446 14.2314 9.05078 17.1966H16.805C16.8791 14.8234 17.2552 12.4689 17.9242 10.1894Z" fill="#004FFC"></path><path d="M26.1802 15.1861V10.9144C24.0239 10.8799 21.8713 10.7246 19.7327 10.4492C19.0662 12.6405 18.6899 14.9087 18.6133 17.1965H24.1553L26.1802 15.1861Z" fill="#004FFC"></path><path d="M22.8753 0.65625C18.8195 1.61418 15.2259 3.94357 12.7109 7.24477C14.6159 7.75272 16.5468 8.1591 18.4955 8.46216C19.5224 5.64295 21.0014 3.00702 22.8753 0.65625Z" fill="#004FFC"></path><path d="M26.1816 9.12189V0.189453C25.9932 0.19864 25.8054 0.21186 25.6182 0.226761C23.3214 2.6932 21.5253 5.57621 20.3281 8.71789C22.2708 8.95487 24.2246 9.08973 26.1816 9.12189Z" fill="#004FFC"></path><path d="M33.5129 7.90484C32.3226 5.07718 30.6425 2.47851 28.5486 0.226761C28.3612 0.211748 28.1732 0.19864 27.9844 0.189453V9.12189C29.5099 9.09702 31.041 9.00873 32.5519 8.85905L33.5129 7.90484Z" fill="#004FFC"></path><path d="M37.7928 3.65883C35.852 2.23351 33.6412 1.21221 31.293 0.65625C32.7315 2.4632 33.9395 4.43984 34.8893 6.54118L37.7928 3.65883Z" fill="#004FFC"></path><path d="M27.9844 10.9145V13.3935L30.5822 10.8145C29.7173 10.8673 28.8513 10.9006 27.9844 10.9145Z" fill="#004FFC"></path><path d="M16.8065 18.9883H9.05078C9.22956 22.5029 10.4443 25.888 12.5442 28.7231L17.4003 23.902C17.0583 22.2844 16.8596 20.6402 16.8065 18.9883Z" fill="#004FFC"></path><path d="M41.6214 7.46094L16.375 32.5265C18.9787 34.4384 22.0555 35.6144 25.2785 35.9293C26.4784 36.047 27.6871 36.047 28.887 35.9293C29.1363 35.9047 29.3902 35.874 29.6635 35.8352C29.7915 35.817 29.922 35.8263 30.0461 35.8626C30.1702 35.8989 30.285 35.9612 30.3827 36.0453C30.4804 36.1295 30.5588 36.2335 30.6125 36.3503C30.6662 36.4671 30.694 36.5941 30.694 36.7225V39.9996L37.289 32.9062C37.3327 32.8592 37.3813 32.8169 37.4341 32.7802C41.2808 30.1071 43.9277 26.0517 44.8137 21.4738C45.6997 16.8959 44.7551 12.1554 42.1801 8.25729C42.0024 7.9884 41.8162 7.72295 41.6214 7.46094ZM27.0832 28.8476C26.7261 28.8476 26.377 28.7424 26.0801 28.5455C25.7832 28.3485 25.5518 28.0685 25.4151 27.741C25.2784 27.4134 25.2427 27.053 25.3124 26.7053C25.382 26.3575 25.554 26.0381 25.8065 25.7874C26.059 25.5367 26.3807 25.366 26.7309 25.2968C27.0812 25.2277 27.4442 25.2632 27.7741 25.3989C28.104 25.5345 28.386 25.7643 28.5844 26.0591C28.7828 26.3539 28.8887 26.7004 28.8887 27.055C28.8887 27.5304 28.6985 27.9864 28.3599 28.3225C28.0213 28.6587 27.562 28.8476 27.0832 28.8476ZM32.4997 28.8476C32.1426 28.8476 31.7936 28.7424 31.4966 28.5455C31.1997 28.3485 30.9683 28.0685 30.8316 27.741C30.695 27.4134 30.6592 27.053 30.7289 26.7053C30.7986 26.3575 30.9705 26.0381 31.223 25.7874C31.4755 25.5367 31.7973 25.366 32.1475 25.2968C32.4977 25.2277 32.8608 25.2632 33.1907 25.3989C33.5206 25.5345 33.8026 25.7643 34.001 26.0591C34.1994 26.3539 34.3052 26.7004 34.3052 27.055C34.3052 27.5304 34.115 27.9864 33.7764 28.3225C33.4378 28.6587 32.9786 28.8476 32.4997 28.8476ZM37.9163 28.8476C37.5592 28.8476 37.2101 28.7424 36.9132 28.5455C36.6163 28.3485 36.3849 28.0685 36.2482 27.741C36.1115 27.4134 36.0758 27.053 36.1455 26.7053C36.2151 26.3575 36.3871 26.0381 36.6396 25.7874C36.8921 25.5367 37.2138 25.366 37.564 25.2968C37.9143 25.2277 38.2773 25.2632 38.6072 25.3989C38.9371 25.5345 39.2191 25.7643 39.4175 26.0591C39.6159 26.3539 39.7218 26.7004 39.7218 27.055C39.7218 27.5304 39.5316 27.9864 39.193 28.3225C38.8544 28.6587 38.3951 28.8476 37.9163 28.8476Z" fill="#004FFC"></path><path d="M7.48954 0.261934C3.24234 4.43855 0.623441 9.97443 0.0979101 15.8865C-0.427621 21.7987 1.17423 27.7044 4.619 32.555L3.85617 32.4429C3.73889 32.4257 3.61934 32.4315 3.50434 32.4602C3.38935 32.4888 3.28115 32.5396 3.18595 32.6098C2.99366 32.7514 2.86593 32.9631 2.83086 33.1983C2.79578 33.4334 2.85623 33.6728 2.99891 33.8637C3.14159 34.0546 3.35481 34.1814 3.59166 34.2162L6.63847 34.6644C6.75745 34.6819 6.87875 34.6756 6.99524 34.6459C7.11174 34.6162 7.22109 34.5637 7.31685 34.4914C7.41262 34.4192 7.49288 34.3286 7.55292 34.2252C7.61296 34.1217 7.65157 34.0074 7.66648 33.8889L8.00502 31.2C8.03266 30.9651 7.9657 30.7289 7.81872 30.5428C7.67173 30.3568 7.45664 30.2359 7.22031 30.2066C6.98397 30.1773 6.74553 30.2419 6.55695 30.3863C6.36837 30.5307 6.24492 30.7433 6.21349 30.9777L6.13721 31.5827C2.91695 27.0781 1.41291 21.5843 1.89332 16.0811C2.37372 10.5778 4.80734 5.42282 8.76017 1.53545C8.84492 1.45274 8.91239 1.35422 8.9587 1.24556C9.00501 1.13689 9.02925 1.02022 9.03004 0.902236C9.03083 0.784249 9.00814 0.667268 8.96329 0.558005C8.91844 0.448742 8.85229 0.349347 8.76866 0.265522C8.68502 0.181697 8.58554 0.115092 8.47592 0.069528C8.3663 0.0239639 8.24869 0.000336914 8.12985 3.57713e-06C8.01101 -0.00032976 7.89327 0.0226367 7.78339 0.0675851C7.67351 0.112534 7.57365 0.17858 7.48954 0.261934Z" fill="#004FFC"></path><path d="M48.8105 2.85508H49.489C49.7284 2.85508 49.9581 2.76065 50.1274 2.59256C50.2967 2.42448 50.3918 2.1965 50.3918 1.95879C50.3918 1.72108 50.2967 1.4931 50.1274 1.32502C49.9581 1.15693 49.7284 1.0625 49.489 1.0625H46.7807C46.5413 1.0625 46.3117 1.15693 46.1424 1.32502C45.9731 1.4931 45.878 1.72108 45.878 1.95879V4.64766C45.878 4.88537 45.9731 5.11335 46.1424 5.28144C46.3117 5.44952 46.5413 5.54395 46.7807 5.54395C47.0202 5.54395 47.2498 5.44952 47.4191 5.28144C47.5884 5.11335 47.6835 4.88537 47.6835 4.64766V4.35211C50.9725 8.82546 52.5493 14.3156 52.1312 19.8385C51.7132 25.3613 49.3276 30.5558 45.402 34.4908C45.2335 34.6597 45.1395 34.8881 45.1406 35.1258C45.1418 35.3635 45.238 35.5911 45.4081 35.7584C45.5782 35.9257 45.8083 36.019 46.0477 36.0179C46.2872 36.0167 46.5163 35.9212 46.6848 35.7523C50.9793 31.4474 53.5601 25.7454 53.9508 19.6988C54.3415 13.6522 52.5157 7.66949 48.8105 2.85508Z" fill="#004FFC"></path></svg>
+                            </div>
+                            <h3 class="title">Multilingual Support</h3>
+                            <p>Break language barriers connect with users 
+                                around the globe. Our AI chatbot
+                                equipped to advanced multilingual
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 44 44" fill="none"><g clip-path="url(#clip0_6034_40870)"><path fill-rule="evenodd" clip-rule="evenodd" d="M21.0833 3.421V9.16667H16.9583V6.875C16.9583 6.63208 16.8616 6.39879 16.6898 6.22692L14.146 3.68317C14.1868 3.53146 14.2083 3.37242 14.2083 3.20833C14.2083 2.19633 13.387 1.375 12.375 1.375C11.363 1.375 10.5417 2.19633 10.5417 3.20833C10.5417 4.22033 11.363 5.04167 12.375 5.04167C12.5391 5.04167 12.6981 5.02013 12.8498 4.97934L15.125 7.2545V9.16667H13.7496C11.2186 9.16667 9.16667 11.2186 9.16667 13.75V15.125H7.2545L4.97934 12.8498C5.02013 12.6981 5.04167 12.5391 5.04167 12.375C5.04167 11.363 4.22033 10.5417 3.20833 10.5417C2.19633 10.5417 1.375 11.363 1.375 12.375C1.375 13.387 2.19633 14.2083 3.20833 14.2083C3.37242 14.2083 3.53146 14.1868 3.68317 14.146L6.22692 16.6898C6.39879 16.8616 6.63208 16.9583 6.875 16.9583H9.16667V21.0833H3.421C3.10383 20.5356 2.51121 20.1667 1.83333 20.1667C0.821333 20.1667 0 20.988 0 22C0 23.012 0.821333 23.8333 1.83333 23.8333C2.51121 23.8333 3.10383 23.4644 3.421 22.9167H9.16667V27.0417H6.875C6.63208 27.0417 6.39879 27.1384 6.22692 27.3102L3.68317 29.854C3.53146 29.8132 3.37242 29.7917 3.20833 29.7917C2.19633 29.7917 1.375 30.613 1.375 31.625C1.375 32.637 2.19633 33.4583 3.20833 33.4583C4.22033 33.4583 5.04167 32.637 5.04167 31.625C5.04167 31.4609 5.02013 31.3019 4.97934 31.1502L7.2545 28.875H9.16667V30.25C9.16667 32.7814 11.2186 34.8333 13.7496 34.8333H15.125V36.7455L12.8498 39.0207C12.6981 38.9799 12.5391 38.9583 12.375 38.9583C11.363 38.9583 10.5417 39.7797 10.5417 40.7917C10.5417 41.8037 11.363 42.625 12.375 42.625C13.387 42.625 14.2083 41.8037 14.2083 40.7917C14.2083 40.6276 14.1868 40.4685 14.146 40.3168L16.6898 37.7731C16.8616 37.6012 16.9583 37.3679 16.9583 37.125V34.8333H21.0833V40.579C20.5356 40.8962 20.1667 41.4888 20.1667 42.1667C20.1667 43.1787 20.988 44 22 44C23.012 44 23.8333 43.1787 23.8333 42.1667C23.8333 41.4888 23.4644 40.8962 22.9167 40.579V34.8333H27.0417V37.125C27.0417 37.3679 27.1384 37.6012 27.3102 37.7731L29.854 40.3168C29.8132 40.4685 29.7917 40.6276 29.7917 40.7917C29.7917 41.8037 30.613 42.625 31.625 42.625C32.637 42.625 33.4583 41.8037 33.4583 40.7917C33.4583 39.7797 32.637 38.9583 31.625 38.9583C31.4609 38.9583 31.3019 38.9799 31.1502 39.0207L28.875 36.7455V34.8333H30.2504C32.7814 34.8333 34.8333 32.7814 34.8333 30.25V28.875H36.7455L39.0207 31.1502C38.9799 31.3019 38.9583 31.4609 38.9583 31.625C38.9583 32.637 39.7797 33.4583 40.7917 33.4583C41.8037 33.4583 42.625 32.637 42.625 31.625C42.625 30.613 41.8037 29.7917 40.7917 29.7917C40.6276 29.7917 40.4685 29.8132 40.3168 29.854L37.7731 27.3102C37.6012 27.1384 37.3679 27.0417 37.125 27.0417H34.8333V22.9167H40.579C40.8962 23.4644 41.4888 23.8333 42.1667 23.8333C43.1787 23.8333 44 23.012 44 22C44 20.988 43.1787 20.1667 42.1667 20.1667C41.4888 20.1667 40.8962 20.5356 40.579 21.0833H34.8333V16.9583H37.125C37.3679 16.9583 37.6012 16.8616 37.7731 16.6898L40.3168 14.146C40.4685 14.1868 40.6276 14.2083 40.7917 14.2083C41.8037 14.2083 42.625 13.387 42.625 12.375C42.625 11.363 41.8037 10.5417 40.7917 10.5417C39.7797 10.5417 38.9583 11.363 38.9583 12.375C38.9583 12.5391 38.9799 12.6981 39.0207 12.8498L36.7455 15.125H34.8333V13.75C34.8333 11.2186 32.7814 9.16667 30.2504 9.16667H28.875V7.2545L31.1502 4.97934C31.3019 5.02013 31.4609 5.04167 31.625 5.04167C32.637 5.04167 33.4583 4.22033 33.4583 3.20833C33.4583 2.19633 32.637 1.375 31.625 1.375C30.613 1.375 29.7917 2.19633 29.7917 3.20833C29.7917 3.37242 29.8132 3.53146 29.854 3.68317L27.3102 6.22692C27.1384 6.39879 27.0417 6.63208 27.0417 6.875V9.16667H22.9167V3.421C23.4644 3.10383 23.8333 2.51121 23.8333 1.83333C23.8333 0.821333 23.012 0 22 0C20.988 0 20.1667 0.821333 20.1667 1.83333C20.1667 2.51121 20.5356 3.10383 21.0833 3.421ZM16.7617 22L18.1193 16.9583H19.9224L22.9483 28.1967C23.0798 28.6852 23.5831 28.9749 24.0717 28.8434C24.5603 28.7118 24.8499 28.2086 24.7184 27.72L21.5101 15.8033C21.4023 15.4032 21.0393 15.125 20.625 15.125H17.4167C17.0023 15.125 16.6393 15.4032 16.5316 15.8033L13.3233 27.72C13.1917 28.2086 13.4814 28.7118 13.97 28.8434C14.4586 28.9749 14.9618 28.6852 15.0934 28.1967L16.2681 23.8333H19.25C19.756 23.8333 20.1667 23.4227 20.1667 22.9167C20.1667 22.4107 19.756 22 19.25 22H16.7617ZM28.875 15.125H27.9583C27.4519 15.125 27.0417 15.5352 27.0417 16.0417V27.0417C26.5357 27.0417 26.125 27.4523 26.125 27.9583C26.125 28.4643 26.5357 28.875 27.0417 28.875H27.9583C28.4648 28.875 28.875 28.4648 28.875 27.9583V16.9583C29.381 16.9583 29.7917 16.5477 29.7917 16.0417C29.7917 15.5357 29.381 15.125 28.875 15.125Z" fill="#004FFC"></path></g><defs><clipPath id="clip0_6034_40870"><rect width="44" height="44" fill="white"></rect></clipPath></defs></svg>
+                            </div>
+                            <h3 class="title">AI-Driven Solutions</h3>
+                            <p>Harness power of artificial intelligence to streamline 
+                                conversations, automate tasks, and deliver experiences.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="44" height="40" viewBox="0 0 44 40" fill="none"><path d="M18.469 23.8426C18.3298 24.0044 18.1331 24.0874 17.9352 24.0874C17.7726 24.0874 17.6092 24.0313 17.4762 23.9167C16.5571 23.125 16.0298 21.9855 16.0298 20.7907C16.0298 19.6924 16.4641 18.6557 17.2526 17.8715C17.5284 17.5972 17.9741 17.5987 18.2481 17.8745C18.5222 18.1503 18.5209 18.5964 18.2451 18.8705C17.7244 19.3884 17.4376 20.0702 17.4376 20.7906C17.4376 21.5749 17.7865 22.3252 18.3947 22.8491C18.6893 23.1029 18.7226 23.5477 18.4689 23.8424L18.469 23.8426ZM43.9953 32.9894C43.9953 34.9169 42.428 36.485 40.5016 36.485C38.7441 36.485 37.2862 35.1796 37.044 33.4871H31.4136C31.0248 33.4871 30.7096 33.1717 30.7096 32.7827V26.9042H27.7455V33.0801C29.3356 33.407 30.5351 34.8181 30.5351 36.5044C30.5351 38.4319 28.9678 40 27.0415 40C25.1152 40 23.5479 38.4319 23.5479 36.5044C23.5479 34.8182 24.7474 33.407 26.3375 33.0801V26.9042H23.3733V32.7827C23.3733 33.1717 23.0581 33.4871 22.6693 33.4871H17.039C16.7968 35.1796 15.3388 36.485 13.5814 36.485C11.6549 36.485 10.0877 34.9169 10.0877 32.9894C10.0877 31.062 11.655 29.4939 13.5814 29.4939C15.1928 29.4939 16.5521 30.5915 16.9538 32.0784H21.9653V26.9042H19.3671C16.0377 26.9042 13.3292 24.1943 13.3292 20.8631C13.3292 20.0712 13.4833 19.3149 13.7615 18.6212H6.03779C2.70853 18.6212 0 15.9112 0 12.5801C0 9.32301 2.58965 6.6597 5.81692 6.54304C6.44337 4.56866 8.28645 3.1899 10.4046 3.1899C11.056 3.1899 11.6939 3.32038 12.285 3.57166C13.3389 1.40605 15.5439 0 18.0007 0C21.3511 0 24.1045 2.6067 24.3417 5.89953C26.3827 5.90877 28.301 6.91256 29.482 8.55721C30.0706 8.37866 30.6917 8.28295 31.33 8.28295C34.6804 8.28295 37.4338 10.8897 37.6709 14.1825C41.1635 14.1977 44 17.0453 44 20.5433C44 24.0412 41.1481 26.9041 37.6426 26.9041H32.1177V32.0783H37.1292C37.5309 30.5914 38.8903 29.4939 40.5017 29.4939C42.4282 29.4939 43.9954 31.062 43.9954 32.9894L43.9953 32.9894ZM14.8218 5.01936C15.0855 5.30515 15.5309 5.32293 15.8166 5.05907C16.4245 4.49752 17.1864 4.32461 18.2147 4.51487C19.3932 4.73286 20.2918 5.65442 20.5043 6.86255C20.5644 7.20433 20.8615 7.44496 21.1968 7.44496C21.2373 7.44496 21.2783 7.44143 21.3196 7.43413C21.7026 7.36669 21.9584 7.00148 21.891 6.6184C21.5757 4.82505 20.2331 3.45562 18.4707 3.12959C17.0108 2.85948 15.7964 3.16041 14.8616 4.02403C14.5759 4.28789 14.5581 4.73348 14.8218 5.01936ZM5.06561 14.5664C4.45737 14.0424 4.10847 13.292 4.10847 12.5078C4.10847 11.7874 4.39525 11.1056 4.91592 10.5878C5.1917 10.3136 5.19302 9.86756 4.91892 9.59172C4.64498 9.31588 4.19919 9.31447 3.92341 9.58873C3.13487 10.3729 2.70061 11.4096 2.70061 12.5078C2.70061 13.7026 3.2278 14.8421 4.1471 15.6339C4.28006 15.7484 4.44347 15.8045 4.60609 15.8045C4.80399 15.8045 5.00066 15.7215 5.13987 15.5597C5.39357 15.2649 5.36031 14.8202 5.06569 14.5664L5.06561 14.5664ZM32.1175 21.5444V25.4955H37.6424C40.3716 25.4955 42.5919 23.274 42.5919 20.5434C42.5919 17.8127 40.3716 15.5912 37.6424 15.5912C37.4495 15.5912 37.253 15.6027 37.0585 15.6256C36.8525 15.6498 36.6471 15.5821 36.4958 15.4408C36.3446 15.2995 36.2632 15.0987 36.2733 14.8918C36.2773 14.8083 36.2794 14.7249 36.2794 14.6439C36.2794 11.9133 34.059 9.69174 31.3298 9.69174C29.2014 9.69174 27.3157 11.0469 26.6375 13.0638C26.5682 13.2702 26.4073 13.4329 26.2017 13.5044C25.9962 13.576 25.7692 13.5483 25.5867 13.4297C25.0353 13.0711 24.3946 12.8816 23.7336 12.8816C22.0915 12.8816 20.6831 14.052 20.3848 15.6646C20.3202 16.0143 20.0069 16.2615 19.6503 16.2395C19.5526 16.2336 19.4573 16.2306 19.3669 16.2306C16.8139 16.2306 14.7369 18.3087 14.7369 20.863C14.7369 23.4172 16.814 25.4954 19.3669 25.4954H21.9652V21.5442C21.9652 21.1553 22.2804 20.8399 22.6691 20.8399C23.0579 20.8399 23.3731 21.1553 23.3731 21.5442V25.4954H26.3373V21.7165C26.3373 21.3276 26.6525 21.0122 27.0413 21.0122C27.4301 21.0122 27.7453 21.3276 27.7453 21.7165V25.4954H30.7095V21.5442C30.7095 21.1553 31.0247 20.8399 31.4134 20.8399C31.8022 20.8399 32.1174 21.1553 32.1174 21.5442L32.1175 21.5444ZM33.8335 15.1456C33.8937 15.4874 34.1907 15.728 34.5259 15.728C34.5664 15.728 34.6076 15.7245 34.6488 15.7172C35.0318 15.6497 35.2875 15.2845 35.2201 14.9014C34.9046 13.108 33.5621 11.7387 31.7998 11.4126C30.3399 11.1426 29.1255 11.4434 28.1906 12.3071C27.9049 12.5709 27.8871 13.0165 28.1509 13.3024C28.4144 13.5883 28.8599 13.6061 29.1456 13.3422C29.7537 12.7807 30.5157 12.6077 31.5439 12.7979C32.7223 13.0159 33.621 13.9374 33.8335 15.1456Z" fill="#004FFC"></path></svg>
+                            </div>
+                            <h3 class="title">Seamless Integration</h3>
+                            <p>Easily connect your chatbot with the tools and platforms 
+                                you already use our solution is designed for smooth.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card" data-aos="fade-right" data-aos-duration="900" data-aos-delay="200">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="49" height="40" viewBox="0 0 49 40" fill="none"><path d="M38.8205 21.1571L20.6919 39.2856C20.4806 39.4969 20.2493 39.6981 20.0078 39.8792C20.3096 39.9597 20.6215 39.9999 20.9434 39.9999H37.9855C40.0478 39.9999 41.7279 38.3198 41.7279 36.2575V21.0162C40.9231 20.9659 40.0981 20.8653 39.243 20.7043C39.1122 20.8552 38.9714 21.0062 38.8205 21.1571Z" fill="#004FFC"></path><path d="M46.4859 9.28613C46.4557 9.25595 46.4255 9.22576 46.3953 9.19558C44.7153 7.51552 42.2706 5.96625 39.494 4.80932C38.991 4.59805 38.4779 4.40691 37.9648 4.23588V4.2057C37.9347 1.98239 36.1439 0.191666 33.9206 0.161485L23.0556 0.00052103C21.6169 -0.0195995 20.2286 0.543774 19.2126 1.55986L1.09405 19.6985C-0.364684 21.1572 -0.364684 23.5314 1.09405 24.9902L13.1462 37.0423C14.605 38.5011 16.9792 38.5011 18.4379 37.0423L36.5765 18.9037C37.0997 18.3806 37.492 17.7669 37.7636 17.0929C39.5845 17.6059 41.3551 17.8776 42.9145 17.8675C46.7776 17.8474 48.0553 16.1573 48.4778 15.1512C48.8903 14.1452 49.1921 12.0426 46.4859 9.28613ZM24.0415 19.5778C23.6189 19.8091 23.1863 20.0606 22.7538 20.282C22.3413 20.4932 22.2004 20.4429 22.0495 20.0003C21.7377 19.115 21.2347 18.3605 20.5405 17.7367C20.3594 17.5758 20.1683 17.4249 19.9369 17.3343C19.1119 17.0124 18.3876 17.5456 18.4882 18.4309C18.5385 18.8735 18.6794 19.2961 18.8504 19.7085C19.1421 20.4228 19.454 21.1371 19.6653 21.8816C20.3494 24.2558 18.8403 26.5897 16.456 26.8211C15.5909 26.9016 14.7659 26.7205 14.0114 26.2879C13.6794 26.0968 13.4279 26.1169 13.1764 26.3986C12.9249 26.6702 12.6432 26.9217 12.3816 27.1833C12.1503 27.4147 11.8988 27.4247 11.6674 27.1934C11.3756 26.9217 11.0939 26.63 10.8122 26.3483C10.5708 26.0968 10.5909 25.8352 10.8324 25.5938C11.0235 25.4026 11.2147 25.2014 11.4058 25.0103C11.8283 24.5777 11.8283 24.5475 11.4863 24.0747C11.0436 23.4711 10.6513 22.8373 10.4098 22.123C10.2187 21.5697 10.269 21.4288 10.772 21.1472C11.1442 20.9359 11.5165 20.7246 11.8988 20.5234C12.3414 20.292 12.4722 20.3423 12.6231 20.8152C12.8746 21.62 13.2871 22.3343 13.8001 22.9982C14.1321 23.4308 14.5446 23.7528 15.0476 23.954C15.9933 24.3262 16.8585 23.6622 16.7579 22.6562C16.7277 22.3141 16.6271 21.9822 16.4963 21.6602C16.1744 20.8353 15.7619 20.0405 15.5506 19.1653C15.1985 17.7569 15.3595 16.4691 16.4963 15.4631C17.784 14.3263 19.2226 14.2559 20.7417 14.9601C21.3654 15.2519 21.3654 15.2619 21.8483 14.779C22.0093 14.6181 22.1703 14.4571 22.3413 14.2961C22.7135 13.944 22.8342 13.944 23.2065 14.2961C23.3171 14.4068 23.4278 14.5175 23.5385 14.6281C24.303 15.3927 24.303 15.3927 23.5385 16.1673C22.9952 16.7106 22.9952 16.7106 23.4479 17.3343C23.8 17.8172 24.0716 18.3303 24.2829 18.8836C24.3936 19.1854 24.3332 19.4168 24.0415 19.5778ZM45.5603 13.944C45.2183 14.7589 41.5664 15.4732 36.0232 13.1593C34.3935 12.4853 32.8844 11.6402 31.647 10.7348C31.6068 10.7851 31.5565 10.8354 31.5162 10.8857C30.309 12.0929 28.3372 12.0929 27.13 10.8857C25.9227 9.67848 25.9227 7.70667 27.13 6.49944C28.3372 5.29221 30.309 5.29221 31.5162 6.49944C32.2406 7.22378 32.5223 8.20968 32.3915 9.14528C33.5786 9.99034 35.0071 10.765 36.5262 11.3988C37.0695 11.6201 37.5826 11.8213 38.0856 11.9923L38.0252 7.62619C38.1157 7.66643 38.1962 7.69661 38.2868 7.73685C40.661 8.72275 42.7938 10.0708 44.172 11.4491C44.1921 11.4692 44.2123 11.4893 44.2324 11.5094C45.5402 12.8273 45.671 13.6724 45.5603 13.944Z" fill="#004FFC"></path></svg>
+                            </div>
+                            <h3 class="title">Free Trial Available</h3>
+                            <p>No Strings Attached. Experience the full 
+                                power of platform with a risk-free
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card" data-aos="fade-up" data-aos-duration="900" data-aos-delay="200">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M2.00742 37.9514C3.09789 39.0414 4.97391 39.1007 6.08242 37.9921L17.4784 26.5961C18.2616 26.8957 19.1116 27.0604 20 27.0604C23.8992 27.0604 27.0609 23.8986 27.0609 19.9994C27.0609 18.9119 26.8148 17.8822 26.3758 16.9627L20.9789 22.3596H19.0266L17.6461 20.9783V19.0268L23.0453 13.6275C22.1234 13.1861 21.0906 12.9385 20 12.9385C16.1008 12.9385 12.9391 16.1002 12.9391 19.9994C12.9391 20.8879 13.1037 21.7379 13.4033 22.5211L2.00742 33.9171C0.893359 35.0311 0.893359 36.8373 2.00742 37.9514Z" fill="#004FFC"></path><path d="M40 22.5V17.5L37.2695 17.1586C37.0805 16.0055 36.7797 14.8906 36.3781 13.825L38.5703 12.1648L36.0703 7.83516L33.5336 8.90547C32.8023 8.01484 31.9852 7.19766 31.0945 6.46641L32.1648 3.92969L27.8352 1.42969L26.175 3.62188C25.1094 3.22031 23.9945 2.91953 22.8414 2.73047L22.5 0H17.5L17.1586 2.73047C16.0055 2.91953 14.8906 3.22031 13.825 3.62188L12.1648 1.42969L7.83516 3.92969L8.90547 6.46641C8.01484 7.19766 7.19766 8.01484 6.46641 8.90547L3.92969 7.83516L1.42969 12.1648L3.62188 13.825C3.22031 14.8906 2.91953 16.0055 2.73047 17.1586L0 17.5V22.5L2.73047 22.8414C2.91953 23.9945 3.22031 25.1094 3.62188 26.175L1.42969 27.8352L2.6543 29.9561L7.93508 24.6753C7.37078 23.2245 7.06055 21.6479 7.06055 20C7.06055 12.8652 12.8652 7.06055 20 7.06055C27.1348 7.06055 32.9395 12.8652 32.9395 20C32.9395 27.1348 27.1348 32.9395 20 32.9395C18.3521 32.9395 16.7756 32.6291 15.3249 32.0647L10.044 37.3456L12.1648 38.5703L13.825 36.3781C14.8906 36.7797 16.0055 37.0805 17.1586 37.2695L17.5 40H22.5L22.8414 37.2695C23.9945 37.0805 25.1094 36.7797 26.175 36.3781L27.8352 38.5703L32.1648 36.0703L31.0945 33.5336C31.9852 32.8023 32.8023 31.9852 33.5336 31.0945L36.0703 32.1648L38.5703 27.8352L36.3781 26.175C36.7797 25.1094 37.0805 23.9945 37.2695 22.8414L40 22.5Z" fill="#004FFC"></path></svg>
+                            </div>
+                            <h3 class="title">Customizable Options</h3>
+                            <p>Every business is unique—and your tools 
+                                should be too our customizable
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card" data-aos="fade-left" data-aos-duration="900" data-aos-delay="200">
+                            <div class="feature-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" fill="none"><g clip-path="url(#clip0_6034_40896)"><path d="M43.7022 16.8926C43.5668 16.9252 43.4497 17.01 43.3766 17.1286C43.3035 17.2471 43.2803 17.3898 43.312 17.5254C43.6964 19.1569 43.891 20.8274 43.8921 22.5036C43.8853 28.1751 41.6292 33.6125 37.6188 37.6229C33.6084 41.6333 28.1711 43.8894 22.4995 43.8961C17.8413 43.9125 13.3081 42.3899 9.60416 39.5649C10.1015 38.8234 10.3002 37.9213 10.1604 37.0395C10.0207 36.1576 9.55289 35.3612 8.8507 34.8097C8.14852 34.2582 7.26387 33.9925 6.37403 34.0658C5.4842 34.1391 4.65493 34.5459 4.05242 35.2048C3.44991 35.8637 3.11867 36.726 3.12509 37.6188C3.13151 38.5116 3.47511 39.3691 4.08703 40.0192C4.69894 40.6694 5.53397 41.0643 6.42477 41.1248C7.31556 41.1853 8.1963 40.9069 8.89049 40.3454C12.7903 43.3477 17.5779 44.9678 22.4995 44.9508C25.89 44.9472 29.2358 44.1763 32.2861 42.696C35.3365 41.2158 38.0123 39.0644 40.1132 36.4032C42.214 33.7419 43.6855 30.6398 44.4172 27.3291C45.149 24.0185 45.1221 20.5852 44.3385 17.2864C44.3228 17.2186 44.2939 17.1546 44.2533 17.0981C44.2128 17.0416 44.1615 16.9937 44.1023 16.9571C44.0432 16.9205 43.9774 16.8959 43.9087 16.8849C43.84 16.8738 43.7699 16.8765 43.7022 16.8926Z" fill="#004FFC"></path><path d="M1.10549 22.5035C1.10572 18.6982 2.12087 14.9619 4.04628 11.6797C5.9717 8.39752 8.73768 5.68827 12.0591 3.83128C15.3804 1.97428 19.137 1.03676 22.9415 1.11538C26.7459 1.19399 30.4605 2.28589 33.7024 4.2785C33.3678 4.99438 33.3142 5.80981 33.5523 6.5633C33.7904 7.31678 34.3028 7.95336 34.9881 8.34696C35.6733 8.74056 36.4813 8.86246 37.2522 8.68852C38.023 8.51459 38.7004 8.0575 39.1502 7.40779C39.6 6.75808 39.7894 5.96314 39.6808 5.18041C39.5723 4.39769 39.1738 3.68426 38.5642 3.18145C37.9546 2.67863 37.1784 2.42309 36.3893 2.46545C35.6002 2.5078 34.8558 2.84496 34.3035 3.41014C30.9031 1.30804 27.003 0.152132 23.0063 0.0618757C19.0096 -0.0283806 15.0613 0.95029 11.5694 2.89674C8.07756 4.8432 5.16883 7.68682 3.14383 11.1337C1.11883 14.5806 0.0510384 18.5058 0.0508024 22.5035C0.0489119 23.8738 0.173661 25.2413 0.423459 26.5887C0.4449 26.71 0.50849 26.82 0.603029 26.8991C0.697567 26.9782 0.816988 27.0214 0.940256 27.0211C0.972187 27.021 1.00402 27.0175 1.03518 27.0105C1.17265 26.9857 1.29465 26.9073 1.3744 26.7927C1.45415 26.678 1.48514 26.5363 1.46057 26.3988C1.22359 25.1139 1.10473 23.8101 1.10549 22.5035Z" fill="#004FFC"></path><path d="M19.3359 19.0195V19.3359H25.6641V19.0195C25.6148 14.7445 19.3852 14.7445 19.3359 19.0195Z" fill="#004FFC"></path><path d="M37.2469 11.5453C31.3125 11.6051 25.6031 7.93829 23.4199 6.35626C23.1518 6.16259 22.8295 6.05835 22.4988 6.05835C22.1681 6.05835 21.8458 6.16259 21.5777 6.35626C19.3945 7.93829 13.6711 11.591 7.75078 11.5453C7.54053 11.5432 7.33193 11.5828 7.13702 11.6616C6.9421 11.7405 6.7647 11.8571 6.61504 12.0048C6.46539 12.1525 6.34642 12.3283 6.265 12.5222C6.18358 12.7161 6.14131 12.9241 6.14062 13.1344C6.14414 21.252 7.76836 32.8641 21.7852 39.9586C22.0062 40.0713 22.2507 40.13 22.4988 40.13C22.7469 40.13 22.9915 40.0713 23.2125 39.9586C37.2293 32.8641 38.8535 21.252 38.857 13.1344C38.8539 12.7103 38.6825 12.3047 38.3807 12.0068C38.0788 11.7089 37.671 11.5429 37.2469 11.5453ZM28.2996 27.5977C28.2996 28.297 28.0218 28.9676 27.5273 29.4621C27.0328 29.9566 26.3622 30.2344 25.6629 30.2344H19.3348C18.6355 30.2344 17.9648 29.9566 17.4703 29.4621C16.9758 28.9676 16.698 28.297 16.698 27.5977V21.9727C16.6983 21.4599 16.8481 20.9582 17.1291 20.5293C17.4101 20.1003 17.8101 19.7626 18.2801 19.5574V19.0125C18.3434 13.3699 26.6543 13.3699 26.7176 19.0125V19.5574C27.1876 19.7626 27.5876 20.1003 27.8686 20.5293C28.1495 20.9582 28.2993 21.4599 28.2996 21.9727V27.5977Z" fill="#004FFC"></path><path d="M23.3613 24.1798C23.3535 24.1326 23.3557 24.0843 23.3678 24.038C23.3799 23.9917 23.4017 23.9485 23.4316 23.9112C23.5494 23.7409 23.6183 23.5416 23.6309 23.335C23.6436 23.1283 23.5994 22.9221 23.5033 22.7388C23.4072 22.5554 23.2627 22.4018 23.0855 22.2947C22.9084 22.1875 22.7053 22.1309 22.4982 22.1309C22.2912 22.1309 22.0881 22.1875 21.9109 22.2947C21.7337 22.4018 21.5893 22.5554 21.4931 22.7388C21.397 22.9221 21.3529 23.1283 21.3655 23.335C21.3781 23.5416 21.4471 23.7409 21.5648 23.9112C21.5946 23.9481 21.6163 23.9909 21.6284 24.0367C21.6405 24.0826 21.6428 24.1305 21.6351 24.1773C21.5525 24.589 21.3187 25.766 21.1538 26.5831C21.1338 26.685 21.1366 26.79 21.162 26.8907C21.1874 26.9914 21.2348 27.0853 21.3008 27.1655C21.3668 27.2457 21.4497 27.3103 21.5436 27.3546C21.6375 27.3989 21.7401 27.4219 21.844 27.4219H23.1518C23.2558 27.4219 23.3586 27.3989 23.4526 27.3544C23.5467 27.3099 23.6297 27.2451 23.6957 27.1647C23.7617 27.0842 23.809 26.9901 23.8342 26.8892C23.8594 26.7883 23.8619 26.683 23.8415 26.5809L23.3613 24.1798Z" fill="#004FFC"></path></g><defs><clipPath id="clip0_6034_40896"><rect width="45" height="45" fill="white"></rect></clipPath></defs></svg>
+                            </div>
+                            <h3 class="title">Secure & Reliable</h3>
+                            <p>Built for Security. Trusted for Reliability data is protected industry-leading
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End feature-sec -->
+
+        <!-- faq-sec -->
+        <section class="faq-sec space-bottom">
+            <div class="carousel-container">
+                <div class="faq-box">
+                    <div class="sec-title">
+                        <span class="sub-title" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">Asked Questions</span>
+                        <h2 class="title" data-aos="fade-up" data-aos-duration="900" data-aos-delay="400">Frequently Asked Questions</h2>
+                        <p data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">Our FAQ section covers everything you need to know, from setup 
+                            and functionality to customization and support.
+                        </p>
+                    </div>
+                    <div class="accordion vs-accordion" id="accordionExample" data-aos="zoom-in"
+                        data-aos-duration="900" data-aos-delay="500">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                    <span>1. What is a chatbot and how does it work?</span>
+                                    <span class="arrow-btn"><img src="assets/images/icon/faq-icon.svg" alt="FAQ icon"></span>
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" role="region"
+                                aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    A chatbot is an AI-powered tool that simulates human conversation through 
+                                    text or voice. It interacts with users, answers questions, and performs 
+                                    tasks using natural language processing (NLP) and machine learning.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                    <span>2. Do I need any technical skills to set it up?</span>
+                                    <span class="arrow-btn"><img src="assets/images/icon/faq-icon.svg" alt="FAQ icon"></span>
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" role="region"
+                                aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    A chatbot is an AI-powered tool that simulates human conversation through 
+                                    text or voice. It interacts with users, answers questions, and performs 
+                                    tasks using natural language processing (NLP) and machine learning.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                    aria-expanded="false" aria-controls="collapseThree">
+                                    <span>3. Can the chatbot integrate with my website or CRM?</span>
+                                    <span class="arrow-btn"><img src="assets/images/icon/faq-icon.svg" alt="FAQ icon"></span>
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" role="region"
+                                aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    A chatbot is an AI-powered tool that simulates human conversation through 
+                                    text or voice. It interacts with users, answers questions, and performs 
+                                    tasks using natural language processing (NLP) and machine learning.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                    aria-expanded="false" aria-controls="collapseFour">
+                                    <span>4. Does it support multiple languages?</span>
+                                    <span class="arrow-btn"><img src="assets/images/icon/faq-icon.svg" alt="FAQ icon"></span>
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" role="region"
+                                aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    A chatbot is an AI-powered tool that simulates human conversation through 
+                                    text or voice. It interacts with users, answers questions, and performs 
+                                    tasks using natural language processing (NLP) and machine learning.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                    aria-expanded="false" aria-controls="collapseFive">
+                                    <span>5. Is live chat available with the bot?</span>
+                                    <span class="arrow-btn"><img src="assets/images/icon/faq-icon.svg" alt="FAQ icon"></span>
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" role="region"
+                                aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    A chatbot is an AI-powered tool that simulates human conversation through 
+                                    text or voice. It interacts with users, answers questions, and performs 
+                                    tasks using natural language processing (NLP) and machine learning.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End faq-sec -->
+
+        <!-- footer-style1 -->
+        <footer class="footer-style1">
+            <button id="scrollTopBtn">
+                <img src="assets/images/icon/check1-3.svg" alt="Scroll to top arrow icon">
+            </button>
+            <div class="carousel-container">
+                <div class="footer-top">
+                    <h2 class="title" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">Start your free trial today</h2>
+                    <p data-aos="fade-up" data-aos-duration="900" data-aos-delay="400">Let your business thrive with smart conversations, smarter support, better results</p>
+                    <div class="footer-btn" data-aos="fade-up" data-aos-duration="700" data-aos-delay="300">
+                        <a href="#" class="btn-style1 v2">
+                            Start 14th Days Free Trial
+                            <span>
+                                <img src="assets/images/icon/arrow.svg" alt="Arrow Icon">
+                            </span>
+                        </a>
+                        <a href="#" class="video-btn video-trigger" data-video="https://www.youtube.com/embed/VIDEO_ID?autoplay=1">
+                            <span>How It Works</span>
+                            <small>
+                                <img src="assets/images/icon/play.svg" alt="play btn">
+                            </small>
+                        </a>
+                    </div>
+                </div>
+                <div class="widget-area">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 col-sm-6">
+                            <div class="footer-widget about-widget" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
+                                <a href="#" title="" class="footer-logo">
+                                    <img src="assets/images/logo2.svg" alt="footer logo">
+                                </a>
+                                <p>We empower businesses to connect with their audience 
+                                    in smarter, faster, and more meaningful ways.
+                                </p>
+                                <ul class="social-links">
+                                    <li><a href="#" title=""><img src="assets/images/icon/link1.svg" alt="Facebook icon"></a></li>
+                                    <li><a href="#" title=""><img src="assets/images/icon/link2.svg" alt="Twitter icon"></a></li>
+                                    <li><a href="#" title=""><img src="assets/images/icon/link3.svg" alt="LinkedIn icon"></a></li>
+                                    <li><a href="#" title=""><img src="assets/images/icon/link4.svg" alt="Instagram icon"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="footer-info" data-aos="fade-up" data-aos-duration="900" data-aos-delay="400">
+                                <div class="footer-widget links-widget">
+                                    <h3 class="widget-title">Product</h3>
+                                    <ul class="footer-link">
+                                        <li><a href="#" title="">Features</a></li>
+                                        <li><a href="#" title="">Integrations</a></li>
+                                        <li><a href="#" title="">Download</a></li>
+                                        <li><a href="#" title="">Pricing</a></li>
+                                    </ul>
+                                </div>
+                                <div class="footer-widget links-widget">
+                                    <h3 class="widget-title">Company</h3>
+                                    <ul class="footer-link">
+                                        <li><a href="#" title="">About us</a></li>
+                                        <li><a href="#" title="">Latest Blog</a></li>
+                                        <li><a href="#" title="">Our Clients</a></li>
+                                        <li><a href="#" title="">Careers</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="footer-widget widget-form" data-aos="fade-up" data-aos-duration="900" data-aos-delay="500">
+                                <div class="form-widget">
+                                    <h3 class="title">Join Our Newsletter</h3>
+                                    <p>Never Miss an Update — Sign Up Today</p>
+                                    <form class="footer-form">
+                                        <input type="text" name="name" placeholder="Enter email" required>
+                                        <button type="submit">
+                                            <img src="assets/images/icon/check1-3.svg" alt="Submit newsletter form button icon">
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="carousel-container">
+                        <div class="footer-box" data-aos="fade-up" data-aos-duration="900" data-aos-delay="300">
+                            <div class="copyright-area">
+                                <p>Sasico,2025 © All rights reserved</p>
+                            </div>
+                            <ul class="terms-list" data-aos="fade-up" data-aos-duration="900" data-aos-delay="400">
+                                <li><a href="#" title="">Terms & Conditions</a></li>
+                                <li><a href="#" title="">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- End footer-style1 -->
+        
+    </div>
+
+
+    <!--********************************
+			Code End  Here 
+	******************************** -->
+
+    <!--==============================
+        All Js File
+    ============================== -->
+    <!-- Bootstrap -->
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <!-- swiper -->
+    <script src="assets/js/vendor/swiper-bundle.min.js"></script>
+    <!-- AOS Js File -->
+    <script src="assets/js/vendor/aos.js"></script>
+    <!-- Main Js File -->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

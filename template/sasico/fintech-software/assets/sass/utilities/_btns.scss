@@ -1,0 +1,19 @@
+// btn-style1
+.btn-style1 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--title-color);
+  font-family: var(--title-font);
+  height: 50px;
+  line-height: 50px;
+  padding: 0 30px;
+  background-color: var(--theme-color);
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  border: 0;
+  &:hover {
+    background-color: var(--title-color);
+    color: var(--white-color);
+  }
+}

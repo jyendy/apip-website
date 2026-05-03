@@ -43,5 +43,6 @@ Con dominio custom (opcional):
 En cada Environment de GitHub (`dev`, `stg`, `prd`):
 
 - `AWS_REGION` (ej. `us-east-1`)
+- `WEBSITE_APP_BASE_URL` (opcional): URL base de la app Next (`apip-front`) para enlaces del marketing en `src/index.html` (marcador `__WEBSITE_APP_BASE_URL__`). Si no se define, el workflow usa por rama: **dev** → `https://app-dev.fincora.io`, **stg** → `https://app-stg.fincora.io`, **prd** → `https://app.fincora.io`.
 - `WEBSITE_DOMAIN_NAME` (opcional)
 - `WEBSITE_CERT_ARN` (opcional, ACM en `us-east-1`)

@@ -16,7 +16,7 @@ Sitio web informativo de Fincora.
 
 ## Desarrollo local rapido
 
-Abre `src/index.html` en navegador para revisar contenido y estilo.
+Abre `src/index.html` en navegador para revisar contenido y estilo. Los enlaces a la app muestran el marcador `__WEBSITE_APP_BASE_URL__` hasta que sustituyas la URL (por ejemplo con el deploy a S3 o reemplazando a mano para una prueba rápida).
 
 ## Deploy DEV
 
@@ -31,3 +31,7 @@ Abre `src/index.html` en navegador para revisar contenido y estilo.
 - `main` -> despliega a `PRD`
 
 Workflow: `.github/workflows/deploy.yml`
+
+Los enlaces a la app en `src/index.html` usan el marcador `__WEBSITE_APP_BASE_URL__`. Antes de subir a S3, el workflow sustituye por la variable de entorno **`WEBSITE_APP_BASE_URL`** (GitHub Environment) o, si está vacía, por la URL por defecto del ambiente (ver `infra/README.md`).
+
+Deploy local con `infra/scripts/deploy-dev.ps1`: parámetro **`-AppBaseUrl`** (por defecto `https://app-dev.fincora.io`).

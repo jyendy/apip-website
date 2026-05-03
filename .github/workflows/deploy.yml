@@ -166,9 +166,29 @@ jobs:
             }}:role/AWSAPIPDeployExecutionRole
           aws-region: ${{ vars.AWS_REGION || 'us-east-1' }}
 
-      - name: Sync src to S3
+      - name: Substitute app base URL and sync to S3
+        env:
+          WEBSITE_APP_BASE_URL_VAR: ${{ vars.WEBSITE_APP_BASE_URL }}
         run: |
-          aws s3 sync src "s3://${{ needs.deploy-infra.outputs.bucket_name }}" --delete
+          set -euo pipefail
+          ENV_SHORT="${{ needs.resolve-target.outputs.env_short }}"
+          APP_URL="${WEBSITE_APP_BASE_URL_VAR:-}"
+          if [[ -z "${APP_URL}" ]]; then
+            case "${ENV_SHORT}" in
+              dev) APP_URL="https://app-dev.fincora.io" ;;
+              stg) APP_URL="https://app-stg.fincora.io" ;;
+              prd) APP_URL="https://app.fincora.io" ;;
+              *) echo "Unknown env_short=${ENV_SHORT}"; exit 1 ;;
+            esac
+          fi
+          echo "Using WEBSITE_APP_BASE_URL=${APP_URL}"
+          STAGING="$(mktemp -d)"
+          cp -r src "${STAGING}/site"
+          while IFS= read -r -d '' f; do
+            sed -i "s|__WEBSITE_APP_BASE_URL__|${APP_URL}|g" "$f"
+          done < <(find "${STAGING}/site" -name '*.html' -print0)
+          aws s3 sync "${STAGING}/site" "s3://${{ needs.deploy-infra.outputs.bucket_name }}" --delete
+          rm -rf "${STAGING}"
 
       - name: Invalidate CloudFront
         run: |

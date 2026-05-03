@@ -1,0 +1,186 @@
+---
+name: Deploy AWS (apip-website)
+
+on:
+  push:
+    branches: [develop, staging, main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-apip-website-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  validate-workflow-and-html:
+    name: Validate YAML and HTML
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "20"
+      - name: Install yamllint
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install yamllint
+      - name: Lint workflow yaml
+        run: |
+          yamllint -d '{extends: default, rules: {truthy: disable, line-length: disable}}' .github/workflows/deploy.yml
+      - name: Lint html files
+        run: |
+          npx --yes htmlhint "src/**/*.html"
+
+  qa-static:
+    name: QA static checks
+    runs-on: ubuntu-latest
+    needs: [validate-workflow-and-html]
+    steps:
+      - uses: actions/checkout@v5
+      - name: Verify required files
+        run: |
+          test -f src/index.html
+          test -f infra/cloudformation/website-stack.yaml
+          test -d src/assets
+
+  resolve-target:
+    name: Resolve target account/env
+    runs-on: ubuntu-latest
+    needs: [qa-static]
+    outputs:
+      env_short: ${{ steps.target.outputs.env_short }}
+      aws_account_id: ${{ steps.target.outputs.aws_account_id }}
+      stack_name: ${{ steps.target.outputs.stack_name }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Map branch -> env and load deploy/env/*.env
+        id: target
+        shell: bash
+        run: |
+          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
+            ENV_SHORT="prd"
+          elif [[ "${GITHUB_REF_NAME}" == "staging" ]]; then
+            ENV_SHORT="stg"
+          else
+            ENV_SHORT="dev"
+          fi
+          ENV_FILE="deploy/env/aws-apip-${ENV_SHORT}.env"
+          set -a
+          # shellcheck disable=SC1090
+          source "${ENV_FILE}"
+          set +a
+          echo "env_short=${ENV_SHORT}" >> "$GITHUB_OUTPUT"
+          echo "aws_account_id=${AWS_ACCOUNT_ID}" >> "$GITHUB_OUTPUT"
+          echo "stack_name=apip-website-${ENV_SHORT}" >> "$GITHUB_OUTPUT"
+
+  deploy-infra:
+    name: Deploy website stack (S3 + CloudFront)
+    needs: [resolve-target]
+    runs-on: ubuntu-latest
+    environment: >-
+      ${{
+        needs.resolve-target.outputs.env_short == 'prd' && 'prd' ||
+        (needs.resolve-target.outputs.env_short == 'stg' && 'stg' || 'dev')
+      }}
+    outputs:
+      bucket_name: ${{ steps.outputs.outputs.bucket_name }}
+      distribution_id: ${{ steps.outputs.outputs.distribution_id }}
+      distribution_domain: ${{ steps.outputs.outputs.distribution_domain }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: aws-actions/configure-aws-credentials@v5
+        with:
+          role-to-assume: >-
+            arn:aws:iam::${{
+              needs.resolve-target.outputs.aws_account_id
+            }}:role/AWSAPIPDeployExecutionRole
+          aws-region: ${{ vars.AWS_REGION || 'us-east-1' }}
+
+      - name: Deploy cloudformation stack
+        run: |
+          EXTRA_PARAMS=""
+          if [[ -n "${{ vars.WEBSITE_DOMAIN_NAME }}" &&
+                -n "${{ vars.WEBSITE_CERT_ARN }}" ]]; then
+            EXTRA_PARAMS="DomainName=${{ vars.WEBSITE_DOMAIN_NAME }}"
+            EXTRA_PARAMS="${EXTRA_PARAMS} AcmCertificateArn=${{ vars.WEBSITE_CERT_ARN }}"
+          fi
+
+          aws cloudformation deploy \
+            --stack-name "${{ needs.resolve-target.outputs.stack_name }}" \
+            --template-file infra/cloudformation/website-stack.yaml \
+            --parameter-overrides \
+              ProjectName=apip-website \
+              Environment=${{ needs.resolve-target.outputs.env_short }} \
+              PriceClass=PriceClass_100 \
+              ${EXTRA_PARAMS} \
+            --capabilities CAPABILITY_NAMED_IAM \
+            --role-arn \
+              arn:aws:iam::${{ needs.resolve-target.outputs.aws_account_id }}:role/AWSAPIPCloudFormationExecutionRole \
+            --no-fail-on-empty-changeset
+
+      - name: Read outputs
+        id: outputs
+        run: |
+          QUERY_BUCKET="Stacks[0].Outputs[?OutputKey=='WebsiteBucketName'].OutputValue"
+          QUERY_DIST_ID="Stacks[0].Outputs[?OutputKey=='CloudFrontDistributionId'].OutputValue"
+          QUERY_DIST_DOMAIN="Stacks[0].Outputs[?OutputKey=='CloudFrontDomainName'].OutputValue"
+
+          BUCKET=$(aws cloudformation describe-stacks \
+            --stack-name "${{ needs.resolve-target.outputs.stack_name }}" \
+            --query "${QUERY_BUCKET}" \
+            --output text)
+
+          DIST_ID=$(aws cloudformation describe-stacks \
+            --stack-name "${{ needs.resolve-target.outputs.stack_name }}" \
+            --query "${QUERY_DIST_ID}" \
+            --output text)
+
+          DIST_DOMAIN=$(aws cloudformation describe-stacks \
+            --stack-name "${{ needs.resolve-target.outputs.stack_name }}" \
+            --query "${QUERY_DIST_DOMAIN}" \
+            --output text)
+
+          echo "bucket_name=${BUCKET}" >> "$GITHUB_OUTPUT"
+          echo "distribution_id=${DIST_ID}" >> "$GITHUB_OUTPUT"
+          echo "distribution_domain=${DIST_DOMAIN}" >> "$GITHUB_OUTPUT"
+
+  deploy-site:
+    name: Upload static site + invalidate CloudFront
+    needs: [resolve-target, deploy-infra]
+    runs-on: ubuntu-latest
+    environment: >-
+      ${{
+        needs.resolve-target.outputs.env_short == 'prd' && 'prd' ||
+        (needs.resolve-target.outputs.env_short == 'stg' && 'stg' || 'dev')
+      }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: aws-actions/configure-aws-credentials@v5
+        with:
+          role-to-assume: >-
+            arn:aws:iam::${{
+              needs.resolve-target.outputs.aws_account_id
+            }}:role/AWSAPIPDeployExecutionRole
+          aws-region: ${{ vars.AWS_REGION || 'us-east-1' }}
+
+      - name: Sync src to S3
+        run: |
+          aws s3 sync src "s3://${{ needs.deploy-infra.outputs.bucket_name }}" --delete
+
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ needs.deploy-infra.outputs.distribution_id }}" \
+            --paths "/*"
+
+      - name: Print website URL
+        run: |
+          if [[ -n "${{ vars.WEBSITE_DOMAIN_NAME }}" ]]; then
+            echo "Website URL: https://${{ vars.WEBSITE_DOMAIN_NAME }}"
+            echo "CloudFront: https://${{ needs.deploy-infra.outputs.distribution_domain }}"
+          else
+            echo "Website URL: https://${{ needs.deploy-infra.outputs.distribution_domain }}"
+          fi

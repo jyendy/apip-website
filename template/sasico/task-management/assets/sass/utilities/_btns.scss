@@ -1,0 +1,31 @@
+// btn-style1
+.btn-style1{
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--white-color);
+  display: inline-block;
+  font-family: var(--title-font);
+  height: 44px;
+  background-color: var(--theme-color);
+  padding: 0 24px;
+  border-radius: 10px;
+  line-height: 44px;
+  border: 0;
+  outline: none;
+  &:hover{
+    background-color: var(--title-color);
+    color: var(--white-color);
+  }
+}
+.btn-style1.v1{
+  background-color: unset;
+  border: 1px solid rgba(108, 51, 255, 0.1);
+  color: var(--title-color);
+  height: 55px;
+  line-height: 53px;
+  &:hover{
+    background-color: var(--theme-color);
+    color: var(--white-color);
+  }
+}

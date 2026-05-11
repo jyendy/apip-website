@@ -27,6 +27,23 @@ Parameters:
     Type: String
     Default: ""
     Description: "Optional ACM certificate ARN (must be in us-east-1) when DomainName is set"
+  WwwAliasDomain:
+    Type: String
+    Default: ""
+    Description: >-
+      Optional second hostname on the same distribution (e.g. www.fincora.io). Must be
+      covered by the ACM certificate. Requests to this host get a 301 to https://DomainName
+      with the same path and query string.
+
+Rules:
+  WwwAliasRequiresCustomDomain:
+    RuleCondition: !Not [!Equals [!Ref WwwAliasDomain, ""]]
+    Assertions:
+      - AssertDescription: >-
+          WwwAliasDomain requires DomainName and AcmCertificateArn (TLS aliases on the distribution).
+        Assert: !And
+          - !Not [!Equals [!Ref DomainName, ""]]
+          - !Not [!Equals [!Ref AcmCertificateArn, ""]]
 
 Conditions:
   UseCustomDomain: !Not [!Equals [!Ref DomainName, ""]]
@@ -34,6 +51,10 @@ Conditions:
   UseAliases: !And
     - !Condition UseCustomDomain
     - !Condition UseAcmCert
+  HasWwwAlias: !Not [!Equals [!Ref WwwAliasDomain, ""]]
+  UseAliasesWithWww: !And
+    - !Condition UseAliases
+    - !Condition HasWwwAlias
 
 Resources:
   SiteBucket:
@@ -87,6 +108,58 @@ Resources:
         SigningBehavior: always
         SigningProtocol: sigv4
 
+  WwwRedirectFunction:
+    Type: AWS::CloudFront::Function
+    Properties:
+      Name: !Sub "${ProjectName}-${Environment}-www-apex"
+      AutoPublish: true
+      FunctionConfig:
+        Comment: !Sub "301 ${WwwAliasDomain} -> https://${DomainName} (path + query)"
+        Runtime: cloudfront-js-2.0
+      FunctionCode: !Sub |
+        function buildQueryString(qs) {
+            if (!qs) {
+                return "";
+            }
+            var parts = [];
+            for (var key in qs) {
+                if (!Object.prototype.hasOwnProperty.call(qs, key)) {
+                    continue;
+                }
+                var entry = qs[key];
+                if (entry.multiValue) {
+                    for (var i = 0; i < entry.multiValue.length; i++) {
+                        parts.push(encodeURIComponent(key) + "=" + encodeURIComponent(entry.multiValue[i].value));
+                    }
+                } else if (entry.value !== undefined) {
+                    parts.push(encodeURIComponent(key) + "=" + encodeURIComponent(entry.value));
+                }
+            }
+            return parts.length ? "?" + parts.join("&") : "";
+        }
+
+        function handler(event) {
+            var request = event.request;
+            var wwwHost = "${WwwAliasDomain}";
+            if (!wwwHost) {
+                return request;
+            }
+            var hostHeader = request.headers.host;
+            var host = hostHeader && hostHeader.value ? hostHeader.value : "";
+            if (host !== wwwHost) {
+                return request;
+            }
+            var apexBase = "https://${DomainName}";
+            var location = apexBase + request.uri + buildQueryString(request.querystring);
+            return {
+                statusCode: 301,
+                statusDescription: "Moved Permanently",
+                headers: {
+                    location: { value: location }
+                }
+            };
+        }
+
   SiteDistribution:
     Type: AWS::CloudFront::Distribution
     Properties:
@@ -113,6 +186,9 @@ Resources:
             - HEAD
           Compress: true
           CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+          FunctionAssociations:
+            - EventType: viewer-request
+              FunctionARN: !GetAtt WwwRedirectFunction.FunctionMetadata.FunctionARN
         CustomErrorResponses:
           - ErrorCode: 403
             ResponseCode: 200
@@ -128,7 +204,11 @@ Resources:
           - CloudFrontDefaultCertificate: true
         Aliases: !If
           - UseAliases
-          - - !Ref DomainName
+          - !If
+            - UseAliasesWithWww
+            - - !Ref DomainName
+              - !Ref WwwAliasDomain
+            - - !Ref DomainName
           - !Ref AWS::NoValue
 
 Outputs:

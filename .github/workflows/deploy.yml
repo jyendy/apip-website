@@ -106,6 +106,9 @@ jobs:
                 -n "${{ vars.WEBSITE_CERT_ARN }}" ]]; then
             EXTRA_PARAMS="DomainName=${{ vars.WEBSITE_DOMAIN_NAME }}"
             EXTRA_PARAMS="${EXTRA_PARAMS} AcmCertificateArn=${{ vars.WEBSITE_CERT_ARN }}"
+            if [[ -n "${{ vars.WEBSITE_WWW_ALIAS }}" ]]; then
+              EXTRA_PARAMS="${EXTRA_PARAMS} WwwAliasDomain=${{ vars.WEBSITE_WWW_ALIAS }}"
+            fi
           fi
 
           aws cloudformation deploy \

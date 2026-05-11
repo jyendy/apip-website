@@ -101,6 +101,10 @@ jobs:
 
       - name: Deploy cloudformation stack
         run: |
+          PRICE_CLASS="${{ vars.WEBSITE_PRICE_CLASS }}"
+          if [[ -z "${PRICE_CLASS}" ]]; then
+            PRICE_CLASS="PriceClass_100"
+          fi
           EXTRA_PARAMS=""
           if [[ -n "${{ vars.WEBSITE_DOMAIN_NAME }}" &&
                 -n "${{ vars.WEBSITE_CERT_ARN }}" ]]; then
@@ -120,7 +124,7 @@ jobs:
             --parameter-overrides \
               ProjectName=apip-website \
               Environment=${{ needs.resolve-target.outputs.env_short }} \
-              PriceClass=PriceClass_100 \
+              PriceClass="${PRICE_CLASS}" \
               ${EXTRA_PARAMS} \
             --capabilities CAPABILITY_NAMED_IAM \
             --role-arn \

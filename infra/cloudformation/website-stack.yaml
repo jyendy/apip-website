@@ -34,6 +34,14 @@ Parameters:
       Optional second hostname on the same distribution (e.g. www.fincora.io). Must be
       covered by the ACM certificate. Requests to this host get a 301 to https://DomainName
       with the same path and query string.
+  WebACLId:
+    Type: String
+    Default: ""
+    Description: >-
+      Optional AWS WAF web ACL ARN (WAFv2 global in us-east-1, e.g.
+      arn:aws:wafv2:us-east-1:ACCOUNT:global/webacl/NAME/ID). Set this if the distribution
+      already has or must keep a web ACL (e.g. Shield / managed rules); otherwise stack
+      updates can fail with "can't remove or replace the web ACL".
 
 Rules:
   WwwAliasRequiresCustomDomain:
@@ -55,6 +63,7 @@ Conditions:
   UseAliasesWithWww: !And
     - !Condition UseAliases
     - !Condition HasWwwAlias
+  UseWebACL: !Not [!Equals [!Ref WebACLId, ""]]
 
 Resources:
   SiteBucket:
@@ -170,6 +179,10 @@ Resources:
         PriceClass: !Ref PriceClass
         HttpVersion: http2
         IPV6Enabled: true
+        WebACLId: !If
+          - UseWebACL
+          - !Ref WebACLId
+          - !Ref AWS::NoValue
         Origins:
           - Id: site-origin
             DomainName: !GetAtt SiteBucket.RegionalDomainName

@@ -110,6 +110,9 @@ jobs:
               EXTRA_PARAMS="${EXTRA_PARAMS} WwwAliasDomain=${{ vars.WEBSITE_WWW_ALIAS }}"
             fi
           fi
+          if [[ -n "${{ vars.WEBSITE_WEB_ACL_ID }}" ]]; then
+            EXTRA_PARAMS="${EXTRA_PARAMS:+${EXTRA_PARAMS} }WebACLId=${{ vars.WEBSITE_WEB_ACL_ID }}"
+          fi
 
           aws cloudformation deploy \
             --stack-name "${{ needs.resolve-target.outputs.stack_name }}" \

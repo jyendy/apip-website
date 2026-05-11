@@ -131,6 +131,18 @@ Resources:
         Comment: !Sub "301 ${WwwAliasDomain} -> https://${DomainName} (path + query)"
         Runtime: cloudfront-js-2.0
       FunctionCode: !Sub |
+        function hostOnly(raw) {
+            if (!raw) {
+                return "";
+            }
+            var h = String(raw).trim().toLowerCase();
+            var colon = h.indexOf(":");
+            if (colon !== -1) {
+                h = h.substring(0, colon);
+            }
+            return h;
+        }
+
         function buildQueryString(qs) {
             if (!qs) {
                 return "";
@@ -154,17 +166,30 @@ Resources:
 
         function handler(event) {
             var request = event.request;
-            var wwwHost = "${WwwAliasDomain}";
+            var wwwHostRaw = "${WwwAliasDomain}";
+            var apexHostRaw = "${DomainName}";
+            if (!wwwHostRaw) {
+                return request;
+            }
+            var wwwHost = hostOnly(wwwHostRaw);
             if (!wwwHost) {
                 return request;
             }
+            if (!apexHostRaw || hostOnly(apexHostRaw) === wwwHost) {
+                return request;
+            }
             var hostHeader = request.headers.host;
-            var host = hostHeader && hostHeader.value ? hostHeader.value : "";
+            var host = hostOnly(hostHeader && hostHeader.value ? hostHeader.value : "");
             if (host !== wwwHost) {
                 return request;
             }
-            var apexBase = "https://${DomainName}";
+            var apexBase = "https://" + hostOnly(apexHostRaw);
             var location = apexBase + request.uri + buildQueryString(request.querystring);
+            var destMatch = location.match(/^https:\/\/([^\/\?#]+)/i);
+            var destHost = destMatch ? hostOnly(destMatch[1]) : "";
+            if (destHost && destHost === host) {
+                return request;
+            }
             return {
                 statusCode: 301,
                 statusDescription: "Moved Permanently",

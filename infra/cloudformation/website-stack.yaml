@@ -18,7 +18,11 @@ Parameters:
       - PriceClass_100
       - PriceClass_200
       - PriceClass_All
+      - Omit
     Default: PriceClass_100
+    Description: >-
+      Edge price class for pay-as-you-go distributions. Use "Omit" for CloudFront
+      flat-rate pricing plans (e.g. Free): those distributions cannot set PriceClass.
   DomainName:
     Type: String
     Default: ""
@@ -64,6 +68,7 @@ Conditions:
     - !Condition UseAliases
     - !Condition HasWwwAlias
   UseWebACL: !Not [!Equals [!Ref WebACLId, ""]]
+  UseExplicitPriceClass: !Not [!Equals [!Ref PriceClass, "Omit"]]
 
 Resources:
   SiteBucket:
@@ -176,7 +181,10 @@ Resources:
         Enabled: true
         Comment: !Sub "${ProjectName}-${Environment}"
         DefaultRootObject: index.html
-        PriceClass: !Ref PriceClass
+        PriceClass: !If
+          - UseExplicitPriceClass
+          - !Ref PriceClass
+          - !Ref AWS::NoValue
         HttpVersion: http2
         IPV6Enabled: true
         WebACLId: !If
